@@ -34,7 +34,8 @@ public class MechanicService {
             """;
 
     private final String GET_ACTIVE_REPAIRS = """
-            SELECT e.imie || ' ' || e.nazwisko as mechanic,
+            SELECT e.imie,
+                   e.nazwisko,
                    p.nazwa as position,
                    cars.VIN ,
                    cars.rok_produkcji,
@@ -314,4 +315,6 @@ public class MechanicService {
     //TODO implement searching through parts
     //TODO implement adding orders for parts
     //TODO extract queries to another class
+    //TODO implement adding repair from template
+    //TODO create mappers for needed classes
 }
