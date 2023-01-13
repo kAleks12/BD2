@@ -8,7 +8,7 @@ import lombok.Builder;
 @Builder
 public class Client {
     private Integer id;
-    private final Address address;
+    private Address address;
     private final String name;
     private final String surname;
 }

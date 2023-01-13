@@ -7,8 +7,10 @@ import lombok.Data;
 @Builder
 public class Part {
     private Integer id;
+    private final String carModel;
+    private final String carBrand;
     private final String serialNumber;
-    private final String manufacturer;
+    private final String producer;
     private final String category;
-    private final Integer stock;
+    private final Double price;
 }

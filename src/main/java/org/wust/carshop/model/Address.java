@@ -11,5 +11,5 @@ public class Address {
     private final String postalCode;
     private final String street;
     private final String buildingNumber;
-    private final String apartment;
+    private final Integer apartment;
 }

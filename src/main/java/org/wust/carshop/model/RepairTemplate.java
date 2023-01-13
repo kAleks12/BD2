@@ -2,6 +2,7 @@ package org.wust.carshop.model;
 
 import lombok.Builder;
 import lombok.Data;
+import org.wust.carshop.util.PartPair;
 
 import java.util.List;
 
@@ -11,5 +12,5 @@ public class RepairTemplate {
     private Integer id;
     private final int cost;
     private final String name;
-    private final List<Part> requiredParts;
+    private List<PartPair> requiredParts;
 }
