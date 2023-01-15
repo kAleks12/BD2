@@ -11,14 +11,42 @@ import org.wust.carshop.model.PartOrder;
 import java.util.Iterator;
 import java.util.List;
 
-import static org.wust.carshop.query.MechanicQueries.*;
-import static org.wust.carshop.query.MechanicQueries.GET_MODEL_ID_BY_NAME;
-import static org.wust.carshop.query.StoremanQueries.*;
+import static org.wust.carshop.query.GetQueries.*;
+import static org.wust.carshop.query.InsertQueries.*;
+import static org.wust.carshop.query.UpdateQueries.*;
 
 @AllArgsConstructor
 public class StoremanService {
     private final Jdbi dbHandler;
 
+
+    public List<String> getAllPartTypes() {
+        return dbHandler.withHandle(handle -> handle.createQuery(GET_PART_TYPES)
+                .mapTo(String.class)
+                .list()
+        );
+    }
+
+    public List<String> getAllPartProducers() {
+        return dbHandler.withHandle(handle -> handle.createQuery(GET_PART_PRODUCERS)
+                .mapTo(String.class)
+                .list()
+        );
+    }
+
+    public int addPartType(String name) {
+        return dbHandler.withHandle(handle -> handle.createUpdate(INSERT_PART_TYPE)
+                .bind("name", name)
+                .execute()
+        );
+    }
+
+    public int addPartProducer(String name) {
+        return dbHandler.withHandle(handle -> handle.createUpdate(INSERT_PART_PRODUCER)
+                .bind("name", name)
+                .execute()
+        );
+    }
 
     public Iterator<PartOrder> getAllOrders() {
         return dbHandler.withHandle(handle -> handle.createQuery(GET_ALL_PART_ORDERS)
