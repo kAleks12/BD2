@@ -8,15 +8,16 @@ import org.wust.carshop.model.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-import static org.wust.carshop.query.MechanicQueries.*;
+import static org.wust.carshop.query.GetQueries.*;
+import static org.wust.carshop.query.InsertQueries.*;
+import static org.wust.carshop.query.UpdateQueries.*;
 
 @AllArgsConstructor
 public class MechanicService {
     private final Jdbi dbHandler;
-    private final Integer mechanicId;
-
 
     public List<String> getCarColors() {
         return dbHandler.withHandle(handle ->
@@ -36,7 +37,7 @@ public class MechanicService {
     }
 
 
-    public List<String> getCarManufacturers() {
+    public List<String> getCarBrands() {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_CAR_MANUFACTURERS)
                         .mapTo(String.class)
@@ -44,10 +45,31 @@ public class MechanicService {
         );
     }
 
+    public int addCarColor(String name){
+        return dbHandler.withHandle(handle -> handle.createUpdate(INSERT_CAR_COLOR)
+                .bind("name", name)
+                .execute()
+        );
+    }
+
+    public int addCarBrand(String name) {
+        return dbHandler.withHandle(handle -> handle.createUpdate(INSERT_CAR_BRAND)
+                .bind("name", name)
+                .execute()
+        );
+    }
+
+    public int addCarModel(String name, Integer brandId) {
+        return dbHandler.withHandle(handle -> handle.createUpdate(INSERT_CAR_MODEL)
+                .bind("name", name)
+                .bind("brand", brandId)
+                .execute()
+        );
+    }
 
     public boolean carExists(String VIN) {
         return !dbHandler.withHandle(handle ->
-                handle.createQuery(CHECK_CAR_BY_VIN)
+                handle.createQuery(GET_CLIENT_ID_BY_VIN)
                         .bind("VIN", VIN)
                         .mapTo(Integer.class)
                         .list()
@@ -145,7 +167,7 @@ public class MechanicService {
     }
 
 
-    public int createRepair(Car car) {
+    public int createRepair(Car car, Integer mechanicId) {
         var created = dbHandler.withHandle(handle ->
                 handle.createUpdate(INSERT_REPAIR)
                         .bind("carVIN", car.getVIN())
@@ -174,6 +196,60 @@ public class MechanicService {
         );
     }
 
+    public Iterator<Part> getAllParts() {
+        return dbHandler.withHandle(handle ->
+                handle.createQuery(GET_ALL_PARTS)
+                        .map(new PartMapper())
+                        .iterator()
+        );
+    }
+
+    public Iterator<Part> getPartsByFullFilter(String carModel, String carBrand,
+                                               String manufacturer, String type) {
+        return dbHandler.withHandle(handle ->
+                handle.createQuery(GET_PARTS_BY_MANUFACTURER_AND_TYPE_AND_CAR)
+                        .bind("type", type)
+                        .bind("carModel", carModel)
+                        .bind("carBrand", carBrand)
+                        .bind("manufacturer", manufacturer)
+                        .map(new PartMapper())
+                        .iterator()
+        );
+    }
+
+    public Iterator<Part> getPartsByCar(String carModel, String carBrand) {
+        return dbHandler.withHandle(handle ->
+                handle.createQuery(GET_PARTS_BY_CAR)
+                        .bind("carModel", carModel)
+                        .bind("carBrand", carBrand)
+                        .map(new PartMapper())
+                        .iterator()
+        );
+    }
+
+    public Iterator<Part> getPartsByCarAndManufacturer(String carModel,
+                                                       String carBrand, String manufacturer) {
+        return dbHandler.withHandle(handle ->
+                handle.createQuery(GET_PARTS_BY_MANUFACTURER_AND_CAR)
+                        .bind("carBrand", carBrand)
+                        .bind("carModel", carModel)
+                        .bind("manufacturer", manufacturer)
+                        .map(new PartMapper())
+                        .iterator()
+        );
+    }
+
+    public Iterator<Part> getPartsByCarAndType(String carModel,
+                                               String carBrand, String type) {
+        return dbHandler.withHandle(handle ->
+                handle.createQuery(GET_PARTS_BY_TYPE_AND_CAR)
+                        .bind("carBrand", carBrand)
+                        .bind("carModel", carModel)
+                        .bind("type", type)
+                        .map(new PartMapper())
+                        .iterator()
+        );
+    }
 
     public void addPartToRepair(Part usedPart, Integer quantity, Integer repairId) {
         var stock = getPartsStock(usedPart.getId());
@@ -225,7 +301,7 @@ public class MechanicService {
         );
     }
 
-    public int createPartOrder(Part part, Integer quantity) {
+    public int createPartOrder(Part part, Integer quantity, Integer mechanicId) {
         if (part.getId() == null) {
             throw new ServiceException("Cannot order a part which has null id!");
         }
@@ -285,10 +361,10 @@ public class MechanicService {
         return template;
     }
 
-    public int createRepairFromTemplate(RepairTemplate template, Car car) {
+    public int createRepairFromTemplate(RepairTemplate template, Car car, Integer mechanicId) {
         checkRequiredParts(template);
 
-        var id = createRepair(car);
+        var id = createRepair(car, mechanicId);
 
         var updated = dbHandler.withHandle(handle ->
                 handle.createUpdate(UPDATE_REPAIR_COST_BY_ID)
