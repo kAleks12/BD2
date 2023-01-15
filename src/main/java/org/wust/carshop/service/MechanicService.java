@@ -1,30 +1,23 @@
 package org.wust.carshop.service;
 
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import org.jdbi.v3.core.Jdbi;
-import org.wust.carshop.TableConfig;
 import org.wust.carshop.exception.ServiceException;
 import org.wust.carshop.mapper.*;
 import org.wust.carshop.model.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import static org.wust.carshop.query.MechanicQueries.*;
 
 @AllArgsConstructor
-@RequiredArgsConstructor
-@Setter
 public class MechanicService {
     private final Jdbi dbHandler;
     private final Integer mechanicId;
-    private TableConfig tables = TableConfig.builder().build();
 
-    //Works
+
     public List<String> getCarColors() {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_CAR_COLORS)
@@ -33,7 +26,7 @@ public class MechanicService {
         );
     }
 
-    //Works
+
     public List<String> getCarModels() {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_CAR_MODELS)
@@ -42,7 +35,7 @@ public class MechanicService {
         );
     }
 
-    //Works
+
     public List<String> getCarManufacturers() {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_CAR_MANUFACTURERS)
@@ -52,7 +45,6 @@ public class MechanicService {
     }
 
 
-    //Works
     public boolean carExists(String VIN) {
         return !dbHandler.withHandle(handle ->
                 handle.createQuery(CHECK_CAR_BY_VIN)
@@ -63,7 +55,7 @@ public class MechanicService {
         );
     }
 
-    //Works
+
     public List<Client> getClientsByFulName(String name, String surname) {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_CLIENTS_BY_FULL_NAME)
@@ -74,7 +66,7 @@ public class MechanicService {
         );
     }
 
-    //Works
+
     public Client createClient(Client client) {
         var address = client.getAddress();
         var addressCreated = createAddress(address);
@@ -113,7 +105,7 @@ public class MechanicService {
         return client;
     }
 
-    //Works
+
     public Car createCar(Car car) {
         var owner = car.getOwner();
 
@@ -152,7 +144,7 @@ public class MechanicService {
         return car;
     }
 
-    //Works
+
     public int createRepair(Car car) {
         var created = dbHandler.withHandle(handle ->
                 handle.createUpdate(INSERT_REPAIR)
@@ -174,7 +166,6 @@ public class MechanicService {
     }
 
 
-    //Works
     public List<Repair> getActiveRepairs() {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_ACTIVE_REPAIRS)
@@ -234,63 +225,6 @@ public class MechanicService {
         );
     }
 
-    //Works
-    public Iterator<Part> getAllParts() {
-        return dbHandler.withHandle(handle ->
-                handle.createQuery(GET_ALL_PARTS)
-                        .map(new PartMapper())
-                        .iterator()
-        );
-    }
-
-    public Iterator<Part> getPartsByFullFilter(String carModel, String carBrand,
-                                               String manufacturer, String type) {
-        return dbHandler.withHandle(handle ->
-                handle.createQuery(GET_PARTS_BY_MANUFACTURER_AND_TYPE_AND_CAR)
-                        .bind("type", type)
-                        .bind("carModel", carModel)
-                        .bind("carBrand", carBrand)
-                        .bind("manufacturer", manufacturer)
-                        .map(new PartMapper())
-                        .iterator()
-        );
-    }
-
-    public Iterator<Part> getPartsByCar(String carModel, String carBrand) {
-        return dbHandler.withHandle(handle ->
-                handle.createQuery(GET_PARTS_BY_CAR)
-                        .bind("carModel", carModel)
-                        .bind("carBrand", carBrand)
-                        .map(new PartMapper())
-                        .iterator()
-        );
-    }
-
-    public Iterator<Part> getPartsByCarAndManufacturer(String carModel,
-                                                       String carBrand, String manufacturer) {
-        return dbHandler.withHandle(handle ->
-                handle.createQuery(GET_PARTS_BY_MANUFACTURER_AND_CAR)
-                        .bind("carBrand", carBrand)
-                        .bind("carModel", carModel)
-                        .bind("manufacturer", manufacturer)
-                        .map(new PartMapper())
-                        .iterator()
-        );
-    }
-
-    public Iterator<Part> getPartsByCarAndType(String carModel,
-                                               String carBrand, String type) {
-        return dbHandler.withHandle(handle ->
-                handle.createQuery(GET_PARTS_BY_TYPE_AND_CAR)
-                        .bind("carBrand", carBrand)
-                        .bind("carModel", carModel)
-                        .bind("type", type)
-                        .map(new PartMapper())
-                        .iterator()
-        );
-    }
-
-    //Works
     public int createPartOrder(Part part, Integer quantity) {
         if (part.getId() == null) {
             throw new ServiceException("Cannot order a part which has null id!");
@@ -307,7 +241,7 @@ public class MechanicService {
         );
     }
 
-    //Works
+
     public List<RepairTemplate> getAllRepairTemplates() {
         var templateSignatures = dbHandler.withHandle(handle ->
                 handle.createQuery(GET_ALL_TEMPLATES)
@@ -358,7 +292,6 @@ public class MechanicService {
 
         var updated = dbHandler.withHandle(handle ->
                 handle.createUpdate(UPDATE_REPAIR_COST_BY_ID)
-                        .bind("repairTemplatesTable", tables.getTemplateRepairsTable())
                         .bind("id", id)
                         .bind("cost", template.getCost())
                         .execute()
@@ -375,7 +308,7 @@ public class MechanicService {
         return id;
     }
 
-    //Works
+
     private int createAddress(Address address) {
         return dbHandler.withHandle(handle ->
                 handle.createUpdate(INSERT_ADDRESS)
