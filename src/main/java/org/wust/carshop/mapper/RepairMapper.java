@@ -20,6 +20,7 @@ public class RepairMapper implements RowMapper<Repair> {
                 .owner(client)
                 .color(rs.getString("color"))
                 .model(rs.getString("model"))
+                .brand(rs.getString("brand"))
                 .productionYear(rs.getInt("production_year"))
                 .build();
 

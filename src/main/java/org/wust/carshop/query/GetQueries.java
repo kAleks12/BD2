@@ -234,6 +234,7 @@ public class GetQueries {
                    cars.VIN ,
                    cars.rok_produkcji as production_year,
                    models.nazwa as model,
+                   brands.nazwa as brand,
                    c.nazwa as color,
                    r.data_rozpoczecia as start_date,
                    k.*,
@@ -244,6 +245,7 @@ public class GetQueries {
             JOIN samochody cars ON r.samochody_VIN = cars.VIN
             JOIN kolory c ON cars.kolory_id = c.id
             JOIN modele models ON cars.modele_id = models.id
+            JOIN marki brands ON models.marki_id = brands.id
             JOIN klienci k ON cars.klienci_id = k.id
             JOIN adres a ON k.adres_id = a.id
             WHERE r.data_zakonczenia IS NULL or r.koszt IS NULL
@@ -274,6 +276,7 @@ public class GetQueries {
 
     static public final String GET_COLOR_ID_BY_NAME = "SELECT id FROM kolory WHERE nazwa = :name";
     static public final String GET_MODEL_ID_BY_NAME = "SELECT id FROM modele WHERE nazwa = :name";
+    static public final String GET_BRAND_ID_BY_NAME = "SELECT id FROM marki WHERE nazwa = :name";
     static public final String GET_CAR_COLORS = "SELECT nazwa FROM kolory";
     static public final String GET_CAR_MODELS = "SELECT nazwa FROM modele";
     static public final String GET_POSITIONS = "SELECT nazwa FROM stanowiska";

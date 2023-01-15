@@ -149,11 +149,19 @@ public class MechanicService {
                         .one()
         );
 
+        var brandId = dbHandler.withHandle(handle ->
+                handle.createQuery(GET_BRAND_ID_BY_NAME)
+                        .bind("name", car.getBrand())
+                        .mapTo(Integer.class)
+                        .one()
+        );
+
         var created = dbHandler.withHandle(handle ->
                 handle.createUpdate(INSERT_CAR)
                         .bind("clientId", owner.getId())
                         .bind("colorId", colorId)
                         .bind("modelId", modelId)
+                        .bind("brandId", brandId)
                         .bind("VIN", car.getVIN())
                         .bind("productionYear", car.getProductionYear())
                         .execute()
