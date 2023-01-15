@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.jdbi.v3.core.Jdbi;
 import org.wust.carshop.exception.ServiceException;
 import org.wust.carshop.mapper.EmployeeMapper;
+import org.wust.carshop.mapper.PartMapper;
 import org.wust.carshop.model.Employee;
 import org.wust.carshop.model.Part;
 import org.wust.carshop.model.RepairTemplate;
@@ -19,7 +20,7 @@ import static org.wust.carshop.query.UpdateQueries.*;
 @AllArgsConstructor
 public class AdminService {
     private final Jdbi dbHandler;
-    private final MechanicService ms = new MechanicService(dbHandler);
+    private final MechanicService ms;
 
     public Iterator<Part> getAllParts() {
         return ms.getAllParts();
