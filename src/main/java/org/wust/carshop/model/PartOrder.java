@@ -3,7 +3,7 @@ package org.wust.carshop.model;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @Builder
@@ -13,5 +13,5 @@ public class PartOrder {
     private final Part orderedPart;
     private final Integer quantity;
     private final Integer price;
-    private final LocalDateTime orderDate;
+    private final LocalDate orderDate;
 }
