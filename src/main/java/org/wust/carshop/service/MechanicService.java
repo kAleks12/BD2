@@ -7,7 +7,6 @@ import org.wust.carshop.mapper.*;
 import org.wust.carshop.model.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -18,6 +17,7 @@ import static org.wust.carshop.query.UpdateQueries.*;
 @AllArgsConstructor
 public class MechanicService {
     private final Jdbi dbHandler;
+    private final UtilsService us;
 
     public List<String> getCarColors() {
         return dbHandler.withHandle(handle ->
@@ -27,7 +27,6 @@ public class MechanicService {
         );
     }
 
-
     public List<String> getCarModels() {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_CAR_MODELS)
@@ -35,7 +34,6 @@ public class MechanicService {
                         .list()
         );
     }
-
 
     public List<String> getCarBrands() {
         return dbHandler.withHandle(handle ->
@@ -45,7 +43,7 @@ public class MechanicService {
         );
     }
 
-    public int addCarColor(String name){
+    public int addCarColor(String name) {
         return dbHandler.withHandle(handle -> handle.createUpdate(INSERT_CAR_COLOR)
                 .bind("name", name)
                 .execute()
@@ -77,7 +75,6 @@ public class MechanicService {
         );
     }
 
-
     public List<Client> getClientsByFulName(String name, String surname) {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_CLIENTS_BY_FULL_NAME)
@@ -87,7 +84,6 @@ public class MechanicService {
                         .list()
         );
     }
-
 
     public Client createClient(Client client) {
         var address = client.getAddress();
@@ -126,7 +122,6 @@ public class MechanicService {
 
         return client;
     }
-
 
     public Car createCar(Car car) {
         var owner = car.getOwner();
@@ -174,7 +169,6 @@ public class MechanicService {
         return car;
     }
 
-
     public int createRepair(Car car, Integer mechanicId) {
         var created = dbHandler.withHandle(handle ->
                 handle.createUpdate(INSERT_REPAIR)
@@ -195,7 +189,6 @@ public class MechanicService {
         );
     }
 
-
     public List<Repair> getActiveRepairs() {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_ACTIVE_REPAIRS)
@@ -205,58 +198,26 @@ public class MechanicService {
     }
 
     public Iterator<Part> getAllParts() {
-        return dbHandler.withHandle(handle ->
-                handle.createQuery(GET_ALL_PARTS)
-                        .map(new PartMapper())
-                        .iterator()
-        );
+        return us.getAllParts();
     }
 
     public Iterator<Part> getPartsByFullFilter(String carModel, String carBrand,
                                                String manufacturer, String type) {
-        return dbHandler.withHandle(handle ->
-                handle.createQuery(GET_PARTS_BY_MANUFACTURER_AND_TYPE_AND_CAR)
-                        .bind("type", type)
-                        .bind("carModel", carModel)
-                        .bind("carBrand", carBrand)
-                        .bind("manufacturer", manufacturer)
-                        .map(new PartMapper())
-                        .iterator()
-        );
+        return us.getPartsByFullFilter(carModel, carBrand, manufacturer, type);
     }
 
     public Iterator<Part> getPartsByCar(String carModel, String carBrand) {
-        return dbHandler.withHandle(handle ->
-                handle.createQuery(GET_PARTS_BY_CAR)
-                        .bind("carModel", carModel)
-                        .bind("carBrand", carBrand)
-                        .map(new PartMapper())
-                        .iterator()
-        );
+        return us.getPartsByCar(carModel, carBrand);
     }
 
     public Iterator<Part> getPartsByCarAndManufacturer(String carModel,
                                                        String carBrand, String manufacturer) {
-        return dbHandler.withHandle(handle ->
-                handle.createQuery(GET_PARTS_BY_MANUFACTURER_AND_CAR)
-                        .bind("carBrand", carBrand)
-                        .bind("carModel", carModel)
-                        .bind("manufacturer", manufacturer)
-                        .map(new PartMapper())
-                        .iterator()
-        );
+        return us.getPartsByCarAndManufacturer(carModel, carBrand, manufacturer);
     }
 
     public Iterator<Part> getPartsByCarAndType(String carModel,
                                                String carBrand, String type) {
-        return dbHandler.withHandle(handle ->
-                handle.createQuery(GET_PARTS_BY_TYPE_AND_CAR)
-                        .bind("carBrand", carBrand)
-                        .bind("carModel", carModel)
-                        .bind("type", type)
-                        .map(new PartMapper())
-                        .iterator()
-        );
+        return us.getPartsByCarAndType(carModel, carBrand, type);
     }
 
     public void addPartToRepair(Part usedPart, Integer quantity, Integer repairId) {
@@ -325,48 +286,12 @@ public class MechanicService {
         );
     }
 
-
     public List<RepairTemplate> getAllRepairTemplates() {
-        var templateSignatures = dbHandler.withHandle(handle ->
-                handle.createQuery(GET_ALL_TEMPLATES)
-                        .map(new RepairTemplateMapper())
-                        .list()
-        );
-        List<RepairTemplate> fullTemplates = new ArrayList<>();
-
-        templateSignatures.forEach(template -> {
-            var parts = dbHandler.withHandle(handle -> handle.createQuery(GET_PARTS_FOR_TEMPLATE)
-                    .bind("templateId", template.getId())
-                    .map(new PartPairMapper())
-                    .list()
-            );
-
-            template.setRequiredParts(parts);
-            fullTemplates.add(template);
-        });
-
-        return fullTemplates;
+        return us.getAllRepairTemplates();
     }
 
     public RepairTemplate getRepairTemplateByName(String name) {
-        var template = dbHandler.withHandle(handle ->
-                handle.createQuery(GET_TEMPLATE_BY_NAME)
-                        .bind("name", name)
-                        .map(new RepairTemplateMapper())
-                        .one()
-        );
-
-
-        var parts = dbHandler.withHandle(handle -> handle.createQuery(GET_PARTS_FOR_TEMPLATE)
-                .bind("templateId", template.getId())
-                .map(new PartPairMapper())
-                .list()
-        );
-
-        template.setRequiredParts(parts);
-
-
-        return template;
+        return us.getRepairTemplateByName(name);
     }
 
     public int createRepairFromTemplate(RepairTemplate template, Car car, Integer mechanicId) {
@@ -391,7 +316,6 @@ public class MechanicService {
 
         return id;
     }
-
 
     private int createAddress(Address address) {
         return dbHandler.withHandle(handle ->

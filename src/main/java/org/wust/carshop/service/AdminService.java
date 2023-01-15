@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import org.jdbi.v3.core.Jdbi;
 import org.wust.carshop.exception.ServiceException;
 import org.wust.carshop.mapper.EmployeeMapper;
-import org.wust.carshop.mapper.PartMapper;
 import org.wust.carshop.model.Employee;
 import org.wust.carshop.model.Part;
 import org.wust.carshop.model.RepairTemplate;
@@ -20,37 +19,37 @@ import static org.wust.carshop.query.UpdateQueries.*;
 @AllArgsConstructor
 public class AdminService {
     private final Jdbi dbHandler;
-    private final MechanicService ms;
+    private final UtilsService us;
 
     public Iterator<Part> getAllParts() {
-        return ms.getAllParts();
+        return us.getAllParts();
     }
 
     public Iterator<Part> getPartsByFullFilter(String carModel, String carBrand,
                                                String manufacturer, String type) {
-        return ms.getPartsByFullFilter(carModel, carBrand, manufacturer, type);
+        return us.getPartsByFullFilter(carModel, carBrand, manufacturer, type);
     }
 
     public Iterator<Part> getPartsByCar(String carModel, String carBrand) {
-        return ms.getPartsByCar(carModel, carBrand);
+        return us.getPartsByCar(carModel, carBrand);
     }
 
     public Iterator<Part> getPartsByCarAndManufacturer(String carModel,
                                                        String carBrand, String manufacturer) {
-        return ms.getPartsByCarAndManufacturer(carModel, carBrand, manufacturer);
+        return us.getPartsByCarAndManufacturer(carModel, carBrand, manufacturer);
     }
 
     public Iterator<Part> getPartsByCarAndType(String carModel,
                                                String carBrand, String type) {
-        return ms.getPartsByCarAndType(carModel, carBrand, type);
+        return us.getPartsByCarAndType(carModel, carBrand, type);
     }
 
     public List<RepairTemplate> getAllRepairTemplates() {
-        return ms.getAllRepairTemplates();
+        return us.getAllRepairTemplates();
     }
 
     public RepairTemplate getRepairTemplateByName(String name) {
-        return ms.getRepairTemplateByName(name);
+        return us.getRepairTemplateByName(name);
     }
 
     public void addRepairTemplate(String name, List<PartPair> requiredParts) {
