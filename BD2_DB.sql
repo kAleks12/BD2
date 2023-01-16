@@ -82,7 +82,7 @@
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 		imie varchar(255) NOT NULL,
 		nazwisko varchar(255) NOT NULL,
-		login varchar(255) GENERATED ALWAYS AS (SUBSTRING(imie, 0, 1) || nazwisko) STORED,
+		login varchar(255) GENERATED ALWAYS AS (SUBSTRING(imie, 1, 1) || nazwisko) STORED,
 		stanowiska_id integer NOT NULL REFERENCES stanowiska --fk
 	);
 

@@ -18,6 +18,7 @@ import static org.wust.carshop.query.UpdateQueries.*;
 public class MechanicService {
     private final Jdbi dbHandler;
     private final UtilsService us;
+    private final Integer mechanicId;
 
     public List<String> getCarColors() {
         return dbHandler.withHandle(handle ->
@@ -209,7 +210,7 @@ public class MechanicService {
         return car;
     }
 
-    public int createRepair(Car car, Integer mechanicId) {
+    public int createRepair(Car car) {
         var created = dbHandler.withHandle(handle ->
                 handle.createUpdate(INSERT_REPAIR)
                         .bind("carVIN", car.getVIN())
@@ -310,7 +311,7 @@ public class MechanicService {
         );
     }
 
-    public int createPartOrder(Part part, Integer quantity, Integer mechanicId) {
+    public int createPartOrder(Part part, Integer quantity) {
         if (part.getId() == null) {
             throw new ServiceException("Cannot order a part which has null id!");
         }
@@ -334,10 +335,10 @@ public class MechanicService {
         return us.getRepairTemplateByName(name);
     }
 
-    public int createRepairFromTemplate(RepairTemplate template, Car car, Integer mechanicId) {
+    public int createRepairFromTemplate(RepairTemplate template, Car car) {
         checkRequiredParts(template);
 
-        var id = createRepair(car, mechanicId);
+        var id = createRepair(car);
 
         var updated = dbHandler.withHandle(handle ->
                 handle.createUpdate(UPDATE_REPAIR_COST_BY_ID)
