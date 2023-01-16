@@ -273,6 +273,14 @@ public class GetQueries {
             JOIN stanowiska s on s.id = e.stanowiska_id
             WHERE imie = :name AND nazwisko = :surname AND s.nazwa = :position
             """;
+    static public final String GET_EMPLOYEES_BY_POSITION = """
+            SELECT e.*,
+            s.nazwa
+            FROM pracownicy e
+            JOIN stanowiska s on s.id = e.stanowiska_id
+            WHERE s.nazwa = :position
+            """;
+
 
     static public final String GET_COLOR_ID_BY_NAME = "SELECT id FROM kolory WHERE nazwa = :name";
     static public final String GET_MODEL_ID_BY_NAME = "SELECT id FROM modele WHERE nazwa = :name";
@@ -288,5 +296,41 @@ public class GetQueries {
     static public final String GET_MAX_REPAIRS_ID = "SELECT MAX(id) FROM naprawy";
     static public final String GET_PART_STOCK_BY_ID = "SELECT ilosc FROM stan_magazynowy WHERE czesci_id = :partId";
     static public final String GET_CLIENT_ID_BY_VIN = "SELECT klienci_id FROM samochody WHERE VIN = :VIN";
-    static public final String GET_POSITION_ID_BY_NAME = "SELECT id FROM stanowiska WHERE name = :name";
+    static public final String GET_POSITION_ID_BY_NAME = "SELECT id FROM stanowiska WHERE nazwa = :name";
+    static public final String BRAND_EXISTS = "SELECT COUNT(id) FROM marki WHERE nazwa = :name";
+    static public final String MODEL_EXISTS = "SELECT COUNT(id) FROM modele WHERE nazwa = :name";
+    static public final String COLOR_EXISTS = "SELECT COUNT(id) FROM kolory WHERE nazwa = :name";
+    static public final String PART_TYPE_EXISTS = "SELECT COUNT(id) FROM typy WHERE nazwa = :name";
+    static public final String PART_PRODUCER_EXISTS = "SELECT COUNT(id) FROM producenci WHERE nazwa = :name";
+    static public final String POSITION_EXISTS = "SELECT COUNT(id) FROM stanowiska WHERE nazwa = :name";
+    static public final String TEMPLATE_EXISTS = "SELECT COUNT(id) FROM szablony_napraw WHERE nazwa = :name";
+    static public final String ADDRESS_EXISTS = """
+            SELECT COUNT(id)
+            FROM adres
+            WHERE miasto = :city AND kod_pocztowy = :postalCode AND ulica = :street
+            AND numer_budynku = :building AND numer_mieszkania = :apartment
+            """;
+
+    static public final String PART_EXISTS = """
+            SELECT COUNT(id)
+            FROM czesci
+            WHERE numer_seryjny = :serialNumber
+            """;
+
+    static public final String VALIDATE = """
+            SELECT id
+            FROM pracownicy
+            WHERE haslo = :password AND login = :login
+            """;
+
+    static public final String GET_PASSWORD = """
+           SELECT rolpassword FROM pg_authid WHERE rolname = :role
+            """;
+
+    static public final String GET_ROLE_BY_ID = """
+           SELECT s.nazwa
+           FROM pracownicy p
+           JOIN stanowiska s ON s.id = p.stanowiska_id
+            """;
+
 }
