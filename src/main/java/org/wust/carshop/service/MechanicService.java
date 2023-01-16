@@ -57,18 +57,58 @@ public class MechanicService {
         );
     }
 
-    public int addCarModel(String name, Integer brandId) {
+    public int addCarModel(String name, String brand) {
+        var brandId = dbHandler.withHandle(handle -> handle.createQuery(GET_BRAND_ID_BY_NAME)
+                .bind("name", brand)
+                .mapTo(Integer.class)
+                .one()
+        );
+
         return dbHandler.withHandle(handle -> handle.createUpdate(INSERT_CAR_MODEL)
                 .bind("name", name)
-                .bind("brand", brandId)
+                .bind("brandId", brandId)
                 .execute()
         );
     }
 
-    public boolean carExists(String VIN) {
+    public boolean carBrandExists(String name) {
         return !dbHandler.withHandle(handle ->
-                handle.createQuery(GET_CLIENT_ID_BY_VIN)
-                        .bind("VIN", VIN)
+                handle.createQuery(BRAND_EXISTS)
+                        .bind("name", name)
+                        .mapTo(Integer.class)
+                        .list()
+                        .isEmpty()
+        );
+    }
+
+    public boolean carModelExists(String name) {
+        return !dbHandler.withHandle(handle ->
+                handle.createQuery(MODEL_EXISTS)
+                        .bind("name", name)
+                        .mapTo(Integer.class)
+                        .list()
+                        .isEmpty()
+        );
+    }
+
+    public boolean carColorExists(String name) {
+        return !dbHandler.withHandle(handle ->
+                handle.createQuery(COLOR_EXISTS)
+                        .bind("name", name)
+                        .mapTo(Integer.class)
+                        .list()
+                        .isEmpty()
+        );
+    }
+
+    public boolean addressExists(Address address) {
+        return !dbHandler.withHandle(handle ->
+                handle.createQuery(ADDRESS_EXISTS)
+                        .bind("city", address.getCity())
+                        .bind("street", address.getStreet())
+                        .bind("postalCode", address.getPostalCode())
+                        .bind("building", address.getBuildingNumber())
+                        .bind("apartment", address.getApartment())
                         .mapTo(Integer.class)
                         .list()
                         .isEmpty()

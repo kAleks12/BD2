@@ -197,4 +197,34 @@ public class StoremanService {
                 .one()
         );
     }
+
+    public boolean partExists(String serialNumber) {
+        return !dbHandler.withHandle(handle ->
+                handle.createQuery(PART_EXISTS)
+                        .bind("serialNumber", serialNumber)
+                        .mapTo(Integer.class)
+                        .list()
+                        .isEmpty()
+        );
+    }
+
+    public boolean partTypeExists(String name) {
+        return !dbHandler.withHandle(handle ->
+                handle.createQuery(PART_TYPE_EXISTS)
+                        .bind("name", name)
+                        .mapTo(Integer.class)
+                        .list()
+                        .isEmpty()
+        );
+    }
+
+    public boolean partProducerExists(String name) {
+        return !dbHandler.withHandle(handle ->
+                handle.createQuery(PART_PRODUCER_EXISTS)
+                        .bind("name", name)
+                        .mapTo(Integer.class)
+                        .list()
+                        .isEmpty()
+        );
+    }
 }

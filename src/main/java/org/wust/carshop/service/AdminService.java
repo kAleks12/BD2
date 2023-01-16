@@ -127,6 +127,14 @@ public class AdminService {
         );
     }
 
+    public Iterator<Employee> getEmployeesByPosition(String position) {
+        return dbHandler.withHandle(handle -> handle.createQuery(GET_EMPLOYEES_BY_POSITION)
+                .bind("position", position)
+                .map(new EmployeeMapper())
+                .iterator()
+        );
+    }
+
     public List<Employee> getEmployeeByFullNameAndPosition(String name, String surname, String position) {
         return dbHandler.withHandle(handle -> handle.createQuery(GET_EMPLOYEES_BY_FULL_NAME_AND_POSITION)
                 .bind("name", name)
@@ -162,6 +170,26 @@ public class AdminService {
                 .bind("positionId", positionId)
                 .bind("id", employee.getId())
                 .execute()
+        );
+    }
+
+    public boolean positionExists(String name) {
+        return !dbHandler.withHandle(handle ->
+                handle.createQuery(POSITION_EXISTS)
+                        .bind("name", name)
+                        .mapTo(Integer.class)
+                        .list()
+                        .isEmpty()
+        );
+    }
+
+    public boolean templateExists(String name) {
+        return !dbHandler.withHandle(handle ->
+                handle.createQuery(TEMPLATE_EXISTS)
+                        .bind("name", name)
+                        .mapTo(Integer.class)
+                        .list()
+                        .isEmpty()
         );
     }
 }
