@@ -237,6 +237,7 @@ public class GetQueries {
                    brands.nazwa as brand,
                    c.nazwa as color,
                    r.data_rozpoczecia as start_date,
+                   r.id as r_id,
                    k.*,
                    a.*
             FROM naprawy r
