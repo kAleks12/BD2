@@ -32,6 +32,7 @@ public class RepairMapper implements RowMapper<Repair> {
                 .build();
 
         return Repair.builder()
+                .id(rs.getInt("r_id"))
                 .repairedCar(car)
                 .mechanic(employee)
                 .startDate(LocalDate.parse(rs.getString("start_date")))
