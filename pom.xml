@@ -13,8 +13,6 @@
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
             <maven.compiler.release>11</maven.compiler.release>
-            <javafx.version>16</javafx.version>
-            <javafx.maven.plugin.version>0.0.6</javafx.maven.plugin.version>
     </properties>
 
     <dependencies>
@@ -38,38 +36,5 @@
             <artifactId>postgresql</artifactId>
             <version>42.5.1</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>19</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>19</version>
-        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
-                    <configuration>
-                        <release>11</release>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.openjfx</groupId>
-                    <artifactId>javafx-maven-plugin</artifactId>
-                    <version>0.0.6</version>
-                    <configuration>
-                        <mainClass>org.wust.carshop.Main</mainClass>
-                    </configuration>
-                </plugin>
-        </plugins>
-    </build>
 </project>
