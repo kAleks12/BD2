@@ -106,7 +106,7 @@ public class AdminService {
 
     public int deleteEmployee(Integer id) {
         return dbHandler.withHandle(handle -> handle.createUpdate(DELETE_EMPLOYEE)
-                .bind("is", id)
+                .bind("id", id)
                 .execute()
         );
     }
