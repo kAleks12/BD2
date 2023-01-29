@@ -12,8 +12,8 @@ public class InsertQueries {
             """;
 
     static public final String INSERT_EMPLOYEE = """
-            INSERT INTO pracownicy(imie, nazwisko, stanowiska_id, haslo)
-            VALUES(:name, :surname, :positionId, :password)
+            INSERT INTO pracownicy(imie, nazwisko, stanowiska_id)
+            VALUES(:name, :surname, :positionId)
             """;
 
     static public final String INSERT_CLIENT = """
