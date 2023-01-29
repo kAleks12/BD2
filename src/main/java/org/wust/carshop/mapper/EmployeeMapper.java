@@ -15,6 +15,7 @@ public class EmployeeMapper implements RowMapper<Employee> {
                 .name(rs.getString("imie"))
                 .surname(rs.getString("nazwisko"))
                 .position(rs.getString("nazwa"))
+                .login(rs.getString("login"))
                 .build();
     }
 }
