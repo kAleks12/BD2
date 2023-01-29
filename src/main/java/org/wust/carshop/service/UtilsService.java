@@ -19,6 +19,15 @@ import static org.wust.carshop.query.GetQueries.GET_PARTS_BY_MANUFACTURER_AND_CA
 public class UtilsService {
     private final Jdbi dbHandler;
 
+    public List<String> getModelsByBrand(String brandName) {
+        return dbHandler.withHandle(handle ->
+                handle.createQuery(GET_MODEL_BY_BRAND)
+                        .bind("name", brandName)
+                        .mapTo(String.class)
+                        .list()
+        );
+    }
+
     public Iterator<Part> getAllParts() {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_ALL_PARTS)

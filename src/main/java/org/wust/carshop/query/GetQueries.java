@@ -21,6 +21,13 @@ public class GetQueries {
             SELECT MAX(id) FROM czesci
              """;
 
+    static public final String GET_MODEL_BY_BRAND = """
+            SELECT modele.nazwa
+            FROM modele
+            JOIN marki on marki.id = modele.marki_id
+            WHERE marki.nazwa = :name
+            """;
+
     public static final String GET_ALL_PART_ORDERS = """
             SELECT z.id as z_id,
                    z.ilosc,
