@@ -116,6 +116,20 @@ public class MechanicService {
         );
     }
 
+    public Integer getAddressId(Address address) {
+        return dbHandler.withHandle(handle ->
+                handle.createQuery(GET_ADDRESS_ID)
+                        .bind("city", address.getCity())
+                        .bind("street", address.getStreet())
+                        .bind("postalCode", address.getPostalCode())
+                        .bind("building", address.getBuildingNumber())
+                        .bind("apartment", address.getApartment())
+                        .mapTo(Integer.class)
+                        .findOne()
+                        .orElse(null)
+        );
+    }
+
     public List<Client> getClientsByFulName(String name, String surname) {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_CLIENTS_BY_FULL_NAME)

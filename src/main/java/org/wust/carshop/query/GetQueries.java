@@ -214,6 +214,16 @@ public class GetQueries {
             WHERE nazwa = :name
             """;
 
+    static public final String GET_ADDRESS_ID = """
+            SELECT id
+            FROM adres
+            WHERE miasto = :city
+            AND ulica = :street
+            AND numer_budynku = :building
+            AND numer_mieszkania = :apartment
+            AND kod_pocztowy = :zipCode
+            """;
+
     static public final String GET_PARTS_FOR_TEMPLATE = """
             SELECT wc.ilosc as quantity,
              p.id,
