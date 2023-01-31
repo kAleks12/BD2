@@ -202,6 +202,12 @@ public class GetQueries {
             FROM szablony_napraw
             """;
 
+    static public final String GET_FILTERED_TEMPLATES = """
+            SELECT *
+            FROM szablony_napraw
+            WHERE nazwa like :arg
+            """;
+
     static public final String GET_TEMPLATE_BY_NAME = """
             SELECT *
             FROM szablony_napraw

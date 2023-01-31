@@ -105,6 +105,29 @@ public class UtilsService {
         return fullTemplates;
     }
 
+    public List<RepairTemplate> getRepairTemplatesByName(String pattern) {
+        return dbHandler.withHandle(handle -> {
+                    var templateSignatures = handle.createQuery(GET_FILTERED_TEMPLATES)
+                            .bind("arg", "%" + pattern + "%")
+                            .map(new RepairTemplateMapper())
+                            .list();
+
+                    List<RepairTemplate> fullTemplates = new ArrayList<>();
+
+                    templateSignatures.forEach(template -> {
+                        var parts = handle.createQuery(GET_PARTS_FOR_TEMPLATE)
+                                .bind("templateId", template.getId())
+                                .map(new PartPairMapper())
+                                .list();
+
+                        template.setRequiredParts(parts);
+                        fullTemplates.add(template);
+                    });
+
+                    return fullTemplates;
+                });
+    }
+
     public RepairTemplate getRepairTemplateByName(String name) {
         var template = dbHandler.withHandle(handle ->
                 handle.createQuery(GET_TEMPLATE_BY_NAME)
