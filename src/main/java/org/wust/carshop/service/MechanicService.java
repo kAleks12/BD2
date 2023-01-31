@@ -116,6 +116,16 @@ public class MechanicService {
         );
     }
 
+    public boolean carExists(String vin) {
+        return !dbHandler.withHandle(handle ->
+                handle.createQuery(CAR_EXISTS)
+                        .bind("VIN", vin)
+                        .mapTo(Integer.class)
+                        .list()
+                        .isEmpty()
+        );
+    }
+
     public Integer getAddressId(Address address) {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_ADDRESS_ID)

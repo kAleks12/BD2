@@ -341,6 +341,12 @@ public class GetQueries {
             WHERE numer_seryjny = :serialNumber
             """;
 
+    static public final String CAR_EXISTS = """
+            SELECT COUNT(id)
+            FROM samochody
+            WHERE VIN = :VIN
+            """;
+
     static public final String VALIDATE = """
             SELECT id
             FROM pracownicy
