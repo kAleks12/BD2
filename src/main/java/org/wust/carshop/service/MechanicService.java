@@ -126,6 +126,24 @@ public class MechanicService {
         );
     }
 
+    public boolean clientExists(Client client) {
+        var address = client.getAddress();
+
+        return !dbHandler.withHandle(handle ->
+                handle.createQuery(CLIENT_EXISTS)
+                        .bind("city", address.getCity())
+                        .bind("street", address.getStreet())
+                        .bind("postalCode", address.getPostalCode())
+                        .bind("building", address.getBuildingNumber())
+                        .bind("apartment", address.getApartment())
+                        .bind("name", client.getName())
+                        .bind("surname", client.getSurname())
+                        .mapTo(Integer.class)
+                        .list()
+                        .isEmpty()
+        );
+    }
+
     public Integer getAddressId(Address address) {
         return dbHandler.withHandle(handle ->
                 handle.createQuery(GET_ADDRESS_ID)

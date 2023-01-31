@@ -347,6 +347,16 @@ public class GetQueries {
             WHERE VIN = :VIN
             """;
 
+    static public final String CLIENT_EXISTS = """
+            SELECT COUNT(id)
+            FROM klienci
+            JOIN adres ON klienci.adres_id = adres.id
+            WHERE imie = :name
+            AND nazwisko = :surname
+            AND miasto = :city AND kod_pocztowy = :postalCode AND ulica = :street
+            AND numer_budynku = :building AND numer_mieszkania = :apartment
+            """;
+
     static public final String VALIDATE = """
             SELECT id
             FROM pracownicy
