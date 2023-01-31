@@ -348,7 +348,7 @@ public class GetQueries {
             """;
 
     static public final String CLIENT_EXISTS = """
-            SELECT COUNT(id)
+            SELECT COUNT(klienci.id)
             FROM klienci
             JOIN adres ON klienci.adres_id = adres.id
             WHERE imie = :name
