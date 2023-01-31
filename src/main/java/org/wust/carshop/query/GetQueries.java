@@ -224,6 +224,16 @@ public class GetQueries {
             AND kod_pocztowy = :zipCode
             """;
 
+    static public final String GET_CLIENT_ID = """
+            SELECT klienci.id
+            FROM klienci
+            JOIN adres ON adres.id = klienci.adres_id
+            WHERE imie = :name
+            AND nazwisko = :surname
+            AND miasto = :city AND kod_pocztowy = :postalCode AND ulica = :street
+            AND numer_budynku = :building AND numer_mieszkania = :apartment
+            """;
+
     static public final String GET_PARTS_FOR_TEMPLATE = """
             SELECT wc.ilosc as quantity,
              p.id,
