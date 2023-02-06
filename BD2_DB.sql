@@ -21,141 +21,138 @@
 	DROP ROLE IF EXISTS magazynier;
 
 	--enum tables
-	CREATE TABLE IF NOT EXISTS kolory (
+	CREATE TABLE IF NOT EXISTS colors (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		nazwa varchar(255) NOT NULL UNIQUE
+		name varchar(255) NOT NULL UNIQUE
 	);
 
-	CREATE TABLE IF NOT EXISTS marki (
+	CREATE TABLE IF NOT EXISTS car_brands (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		nazwa varchar(255) NOT NULL UNIQUE
+		name varchar(255) NOT NULL UNIQUE
 	);
 
-	CREATE TABLE IF NOT EXISTS modele (
+	CREATE TABLE IF NOT EXISTS car_models (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		nazwa varchar(255) NOT NULL UNIQUE,
-		marki_id integer NOT NULL REFERENCES marki ON DELETE CASCADE --fk
+		name varchar(255) NOT NULL UNIQUE,
+		brand_id integer NOT NULL REFERENCES car_brands ON DELETE CASCADE --fk
 	);
 
-	CREATE TABLE IF NOT EXISTS producenci (
+	CREATE TABLE IF NOT EXISTS part_manufacturers (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		nazwa varchar(255) NOT NULL UNIQUE
+		name varchar(255) NOT NULL UNIQUE
 	);
 
-	CREATE TABLE IF NOT EXISTS typy (
+	CREATE TABLE IF NOT EXISTS part_types (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		nazwa varchar(255) NOT NULL UNIQUE
+		name varchar(255) NOT NULL UNIQUE
 	);
 
-	CREATE TABLE IF NOT EXISTS stanowiska (
+	CREATE TABLE IF NOT EXISTS employee_positions (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		nazwa varchar(255) NOT NULL UNIQUE
+		name varchar(255) NOT NULL UNIQUE
 	);
 
 
 	--base tables
-	CREATE TABLE IF NOT EXISTS adres (
+	CREATE TABLE IF NOT EXISTS client_addresses (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		miasto varchar(255) NOT NULL,
-		ulica varchar(255) NOT NULL,
-		numer_budynku varchar(6) NOT NULL,
-		numer_mieszkania integer CHECK (numer_mieszkania > 0), 
-		kod_pocztowy varchar(6) NOT NULL 
+		city varchar(255) NOT NULL,
+		street varchar(255) NOT NULL,
+		building varchar(6) NOT NULL,
+		apartment integer CHECK (apartment > 0),
+		postal_code varchar(6) NOT NULL
 	);
 
-	CREATE TABLE IF NOT EXISTS klienci (
+	CREATE TABLE IF NOT EXISTS clients (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		imie varchar(255) NOT NULL,
-		nazwisko varchar(255) NOT NULL,
-		adres_id integer REFERENCES adres ON DELETE SET NULL --fk
+		name varchar(255) NOT NULL,
+		surname varchar(255) NOT NULL,
+		address_id integer REFERENCES client_addresses ON DELETE SET NULL --fk
+	);
+	CREATE TABLE IF NOT EXISTS cars (
+		vin varchar(255) PRIMARY KEY,
+		production_year integer NOT NULL check(production_year > 1950),
+		client_id integer NOT NULL REFERENCES clients ON DELETE CASCADE, --fk
+		model_id integer NOT NULL REFERENCES car_models, --fk
+		color_id integer NOT NULL REFERENCES  colors --fk
 	);
 
-	CREATE TABLE IF NOT EXISTS samochody (
-		VIN varchar(255) PRIMARY KEY,
-		rok_produkcji integer NOT NULL check(rok_produkcji > 1950),
-		klienci_id integer NOT NULL REFERENCES klienci ON DELETE CASCADE, --fk
-		modele_id integer NOT NULL REFERENCES modele, --fk
-		kolory_id integer NOT NULL REFERENCES  kolory --fk
-	);
-
-	CREATE TABLE IF NOT EXISTS pracownicy (
+	CREATE TABLE IF NOT EXISTS employees (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		imie varchar(255) NOT NULL,
-		nazwisko varchar(255) NOT NULL,
-		login varchar(255) GENERATED ALWAYS AS (SUBSTRING(imie, 1, 1) || nazwisko) STORED,
-		stanowiska_id integer NOT NULL REFERENCES stanowiska --fk
+		name varchar(255) NOT NULL,
+		surname varchar(255) NOT NULL,
+		login varchar(255) GENERATED ALWAYS AS (SUBSTRING(name, 1, 1) || surname) STORED,
+		position_id integer NOT NULL REFERENCES employee_positions --fk
 	);
 
-	CREATE TABLE IF NOT EXISTS naprawy (
+	CREATE TABLE IF NOT EXISTS repairs (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		data_rozpoczecia date NOT NULL,
-		data_zakonczenia date,
-		koszt float,
-		samochody_VIN varchar(255) REFERENCES samochody ON DELETE SET NULL, --fk
-		pracownicy_id integer REFERENCES pracownicy ON DELETE SET NULL --fk
+		start_date date NOT NULL,
+		end_date date,
+		cost float,
+		car_vin varchar(255) REFERENCES cars ON DELETE SET NULL, --fk
+		employee_id integer REFERENCES employees ON DELETE SET NULL --fk
 	);
 
-	CREATE TABLE IF NOT EXISTS czesci (
+	CREATE TABLE IF NOT EXISTS parts (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		numer_seryjny varchar(255) NOT NULL UNIQUE,
-		koszt float NOT NULL,
-		modele_id integer NOT NULL REFERENCES modele,
-		producenci_id integer NOT NULL REFERENCES producenci, --fk
-		typy_id integer NOT NULL REFERENCES typy --fk
+		serial_number varchar(255) NOT NULL UNIQUE,
+		price float NOT NULL,
+		model_id integer NOT NULL REFERENCES car_models,
+		manufacturer_id integer NOT NULL REFERENCES part_manufacturers, --fk
+		type_id integer NOT NULL REFERENCES part_types --fk
 	);
 
-	CREATE TABLE IF NOT EXISTS zamowienia (
+	CREATE TABLE IF NOT EXISTS part_orders (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		ilosc integer NOT NULL, 
-		cena float NOT NULL,
-		data date NOT NULL,
-		pracownicy_id integer REFERENCES pracownicy ON DELETE SET NULL , --fk
-		czesci_id integer NOT NULL REFERENCES czesci ON DELETE CASCADE -- fk
+		quantity integer NOT NULL,
+		cost float NOT NULL,
+		date date NOT NULL,
+		employee_id integer REFERENCES employees ON DELETE SET NULL , --fk
+		part_id integer NOT NULL REFERENCES parts ON DELETE CASCADE -- fk
 	);
 
-	CREATE TABLE IF NOT EXISTS szablony_napraw (
+	CREATE TABLE IF NOT EXISTS repair_templates (
 		id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-		nazwa varchar(255) NOT NULL UNIQUE,
-		koszt float NOT NULL
+		name varchar(255) NOT NULL UNIQUE
 	);
-
 
 	--non primary key tables
-	CREATE TABLE IF NOT EXISTS stan_magazynowy (
-		ilosc integer NOT NULL CHECK (ilosc > 0),
-		czesci_id integer NOT NULL REFERENCES czesci ON DELETE CASCADE --fk
+	CREATE TABLE IF NOT EXISTS part_stock (
+		stock integer NOT NULL CHECK (stock > 0),
+		part_id integer NOT NULL REFERENCES parts ON DELETE CASCADE --fk
 	);
 
-	CREATE TABLE IF NOT EXISTS uzyte_czesci (
-		ilosc integer NOT NULL CHECk(ilosc > 0),
-		naprawy_id integer NOT NULL REFERENCES naprawy ON DELETE CASCADE, --fk
-		czesci_id integer REFERENCES czesci ON DELETE SET NULL --fk
+	CREATE TABLE IF NOT EXISTS used_parts (
+		quantity integer NOT NULL CHECk(quantity > 0),
+		repair_id integer NOT NULL REFERENCES repairs ON DELETE CASCADE, --fk
+		part_id integer REFERENCES parts ON DELETE SET NULL --fk
 	);
 
-	CREATE TABLE IF NOT EXISTS wymagane_czesci (
-		ilosc integer NOT NULL CHECK(ilosc > 0),
-		szablony_napraw_id integer NOT NULL REFERENCES szablony_napraw ON DELETE CASCADE, --fk
-		czesci_id integer NOT NULL REFERENCES czesci ON DELETE SET NULL--fk
+	CREATE TABLE IF NOT EXISTS required_parts (
+        quantity integer NOT NULL CHECK(quantity > 0),
+		template_id integer NOT NULL REFERENCES repair_templates ON DELETE CASCADE, --fk
+		part_id integer NOT NULL REFERENCES parts ON DELETE SET NULL--fk
 	);
 
 	--indexes
-	CREATE INDEX ON kolory(id);
-	CREATE INDEX ON producenci(id);
-	CREATE INDEX ON typy(id);
-	CREATE INDEX ON marki(id);
-	CREATE INDEX ON modele(id);
-	CREATE INDEX ON stanowiska(id);
+	CREATE INDEX ON colors(id);
+	CREATE INDEX ON part_manufacturers(id);
+	CREATE INDEX ON part_types(id);
+	CREATE INDEX ON car_brands(id);
+	CREATE INDEX ON car_models(id);
+	CREATE INDEX ON employee_positions(id);
 
-	CREATE INDEX ON adres(id);
-	CREATE INDEX ON klienci(id);
-	CREATE INDEX ON samochody(VIN);
-	CREATE INDEX ON naprawy(id);
-	CREATE INDEX ON pracownicy(id);
-	CREATE INDEX ON zamowienia(id);
-	CREATE INDEX ON czesci(id);
-	CREATE INDEX ON szablony_napraw(id);
+	CREATE INDEX ON client_addresses(id);
+	CREATE INDEX ON clients(id);
+	CREATE INDEX ON cars(VIN);
+	CREATE INDEX ON repairs(id);
+	CREATE INDEX ON employees(id);
+	CREATE INDEX ON part_orders(id);
+	CREATE INDEX ON parts(id);
+	CREATE INDEX ON repair_templates(id);
 
-	CREATE ROLE "mechanik" WITH
+	CREATE ROLE "mechanic" WITH
 		LOGIN
 		NOSUPERUSER
 		NOCREATEDB
@@ -163,9 +160,9 @@
 		INHERIT
 		NOREPLICATION
 		CONNECTION LIMIT -1
-		PASSWORD 'db2mechanikpassword'; --change to encrypted one
+		PASSWORD 'm-password'; --change to encrypted one
 
-	CREATE ROLE "magazynier" WITH
+	CREATE ROLE "warehouseman" WITH
 		LOGIN
 		NOSUPERUSER
 		NOCREATEDB
@@ -173,17 +170,8 @@
 		INHERIT
 		NOREPLICATION
 		CONNECTION LIMIT -1
-		PASSWORD 'db2magazynierpassword'; --change to encrypted one
+		PASSWORD 'w-password'; --change to encrypted one
 
 
-	--magazynier privileges
-	GRANT SELECT ON czesci TO magazynier;
-	GRANT SELECT, DELETE ON zamowienia TO magazynier;
-	GRANT UPDATE ON stan_magazynowy TO magazynier;
-
-
-	--mechanik privileges
-	GRANT SELECT, UPDATE, INSERT ON naprawy, klienci, adres TO mechanik;
-	GRANT SELECT, INSERT ON samochody TO mechanik;
-	GRANT INSERT ON zamowienia TO mechanik;
-	GRANT SELECT ON szablony_napraw TO mechanik;
+	--warehouseman privileges TODO
+	--mechanik privileges TODO
