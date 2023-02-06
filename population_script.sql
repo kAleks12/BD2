@@ -1,783 +1,801 @@
---kolory
-
-insert into kolory (nazwa) values ('Blue');
-insert into kolory (nazwa) values ('Indigo');
-insert into kolory (nazwa) values ('Mauv');
-insert into kolory (nazwa) values ('Red');
-insert into kolory (nazwa) values ('Purple');
-insert into kolory (nazwa) values ('Pink');
-insert into kolory (nazwa) values ('Yellow');
-insert into kolory (nazwa) values ('Crimson');
-insert into kolory (nazwa) values ('Violet');
-insert into kolory (nazwa) values ('Puce');
-insert into kolory (nazwa) values ('Fuscia');
-insert into kolory (nazwa) values ('Aquamarine');
-
-
---marki
-
-insert into marki (nazwa) values ('Ford');
-insert into marki (nazwa) values ('Mazda');
-insert into marki (nazwa) values ('Dodge');
-insert into marki (nazwa) values ('Audi');
-insert into marki (nazwa) values ('Mercedes-Benz');
-insert into marki (nazwa) values ('Toyota');
-insert into marki (nazwa) values ('BMW');
-insert into marki (nazwa) values ('Honda');
-insert into marki (nazwa) values ('Suzuki');
-insert into marki (nazwa) values ('Chevrolet');
+--colors
+insert into colors (name)
+values
+ ('Blue'),
+ ('Indigo'),
+ ('Mauv'),
+ ('Red'),
+ ('Purple'),
+ ('Pink'),
+ ('Yellow'),
+ ('Crimson'),
+ ('Violet'),
+ ('Puce'),
+ ('Fuscia'),
+ ('Aquamarine');
 
 
---modele
-
-insert into modele (nazwa, marki_id) values ('X6 M', 7);
-insert into modele (nazwa, marki_id) values ('5 Series', 7);
-insert into modele (nazwa, marki_id) values ('MX-5', 2);
-insert into modele (nazwa, marki_id) values ('Silhouette', 5);
-insert into modele (nazwa, marki_id) values ('Q5', 4);
-insert into modele (nazwa, marki_id) values ('H2', 7);
-insert into modele (nazwa, marki_id) values ('E-Class', 5);
-insert into modele (nazwa, marki_id) values ('Corvette', 9);
-insert into modele (nazwa, marki_id) values ('S-2000', 8);
-insert into modele (nazwa, marki_id) values ('ES', 6);
-insert into modele (nazwa, marki_id) values ('A8', 4);
-insert into modele (nazwa, marki_id) values ('Tracer', 3);
-insert into modele (nazwa, marki_id) values ('Dakota', 1);
-insert into modele (nazwa, marki_id) values ('Civic', 8);
-insert into modele (nazwa, marki_id) values ('350Z Roadster', 9);
-insert into modele (nazwa, marki_id) values ('S-Class', 5);
-insert into modele (nazwa, marki_id) values ('Edge', 1);
-insert into modele (nazwa, marki_id) values ('Accord', 8);
-insert into modele (nazwa, marki_id) values ('Viper', 3);
-insert into modele (nazwa, marki_id) values ('Camry', 6);
-insert into modele (nazwa, marki_id) values ('Swift', 9);
-insert into modele (nazwa, marki_id) values ('Vitara', 9);
-insert into modele (nazwa, marki_id) values ('Tundra', 6);
-insert into modele (nazwa, marki_id) values ('Taurus', 1);
-insert into modele (nazwa, marki_id) values ('Escalade', 10);
-insert into modele (nazwa, marki_id) values ('Crown Victoria', 1);
-insert into modele (nazwa, marki_id) values ('Cruz', 10);
-insert into modele (nazwa, marki_id) values ('Charger', 3);
-insert into modele (nazwa, marki_id) values ('Daytona', 1);
-insert into modele (nazwa, marki_id) values ('RX-7', 2);
+--car brands
+insert into car_brands (name)
+values
+ ('Ford'),
+ ('Mazda'),
+ ('Dodge'),
+ ('Audi'),
+ ('Mercedes-Benz'),
+ ('Toyota'),
+ ('BMW'),
+ ('Honda'),
+ ('Suzuki'),
+ ('Chevrolet');
 
 
---adresy
-
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Oumiao', '58-310', 'Mccormick', 160, 29);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Mariquita', '73-028', 'Dorton', 200, 32);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Oslo', '22-319', 'Myrtle', 158, 11);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Ḩarf al Musaytirah', '42-324', 'Melody', 128, 22);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Jinchuan', '24-429', 'Eliot', 61, 37);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Chilliwack', '82-392', 'Onsgard', 57, 37);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Pochinok', '21-486', 'Shelley', 154, 37);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Khlong Yai', '23-110', 'Victoria', 79, 27);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Kasreman', '54-523', 'Waywood', 6, 34);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Maonon', '44-302', 'Springs', 34, 19);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Hrochův Týnec', '53-862', 'Dawn', 48, 1);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Popayán', '19-018', 'Westend', 171, 2);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Siparia', '24-523', 'Hoard', 2, 34);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Zala', '24-523', 'Springs', 159, 15);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Shangrao', '64-345', 'Truax', 191, 29);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Ust’-Omchug', '66-137', 'Moose', 145, 25);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Malati', '63-572', 'Dakota', 40, 38);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Chironkamba', '78-093', 'Green', 36, 26);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Makiwalo', '17-643', 'Columbus', 193, 7);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Bangunharja', '34-567', 'Nancy', 26, 33);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Moravský Písek', '69-685', 'Lighthouse Bay', 68, 4);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Chiba', '19-648', 'American', 147, 15);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Herálec', '59-201', 'Rieder', 67, 20);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Zhavoronki', '60-107', 'Scott', 10, 37);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Luotang', '63-826', 'Anthes', 111, 30);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Trzciana', '36-071', 'Gerald', 197, 35);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Vsevolozhsk', '18-649', 'Eagle Crest', 19, 13);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Gorki Vtoryye', '14-422', 'Crowley', 100, 22);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Khoyniki', '53-836', 'Spohn', 155, 13);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Gengzhuang', '15-364', 'Vernon', 160, 32);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Parista', '31-622', 'Carey', 158, 35);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Cuenca', '84-274', 'Loeprich', 48, 40);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Chotepe', '50-310', 'David', 164, 1);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Sleman', '21-379', 'Barnett', 5, 31);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Floriano', '64-000', 'Katie', 198, 35);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Bagdadi', '56-123', 'Vahlen', 123, 5);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Al Fākhūrah', '90-765', 'Parkside', 5, 33);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Landskrona', '26-191', 'Londonderry', 185, 17);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Yalagüina', '65-273', 'High Crossing', 32, 8);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Watuka', '84-238', 'Eagle Crest', 115, 9);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Ust’-Katav', '45-049', 'Thierer', 5, 35);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Urengoy', '62-860', 'Roxbury', 158, 9);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Bucaramanga', '68-011', 'Larry', 2, 7);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Tingzhou', '65-234', 'Waubesa', 180, 40);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Zhosaly', '52-239', 'Springs', 20, 8);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Longxian', '27-384', 'Gulseth', 102, 7);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Gândara de Aquém', '24-445', 'Di Loreto', 36, 39);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Rathangan', '23-423', 'Fairview', 69, 12);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Komorniki', '62-056', 'Russell', 145, 1);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Daji', '17-263', 'Crescent Oaks', 1, 40);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Viana', '65-000', 'Milwaukee', 130, 21);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Takikawa', '50-625', 'Carberry', 140, 7);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Quintães', '94-206', 'Golf Course', 183, 4);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Novoye Leushino', '15-051', 'Main', 143, 39);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Dorotea', '91-732', 'Tomscot', 22, 11);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Taurija', '62-425', 'Donald', 104, 33);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Quipot', '48-036', 'Ludington', 182, 36);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Zharkent', '42-124', 'Reindahl', 136, 14);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Oravais', '38-130', '2nd', 135, 11);
-insert into adres (miasto, kod_pocztowy, ulica, numer_budynku, numer_mieszkania) values ('Jiangwan', '58-310', 'Dayton', 187, 10);
+--car models
+insert into car_models (name, brand_id)
+values
+ ('X6 M', 7),
+ ('5 Series', 7),
+ ('MX-5', 2),
+ ('Silhouette', 5),
+ ('Q5', 4),
+ ('H2', 7),
+ ('E-Class', 5),
+ ('Corvette', 9),
+ ('S-2000', 8),
+ ('ES', 6),
+ ('A8', 4),
+ ('Tracer', 3),
+ ('Dakota', 1),
+ ('Civic', 8),
+ ('350Z Roadster', 9),
+ ('S-Class', 5),
+ ('Edge', 1),
+ ('Accord', 8),
+ ('Viper', 3),
+ ('Camry', 6),
+ ('Swift', 9),
+ ('Vitara', 9),
+ ('Tundra', 6),
+ ('Taurus', 1),
+ ('Escalade', 10),
+ ('Crown Victoria', 1),
+ ('Cruz', 10),
+ ('Charger', 3),
+ ('Daytona', 1),
+ ('RX-7', 2);
 
 
---klienci
-
-insert into klienci (imie, nazwisko, adres_id) values ('Raffarty', 'Mitham', 27);
-insert into klienci (imie, nazwisko, adres_id) values ('Marigold', 'Rumsey', 44);
-insert into klienci (imie, nazwisko, adres_id) values ('Meara', 'Terzo', 25);
-insert into klienci (imie, nazwisko, adres_id) values ('Vin', 'Curmi', 49);
-insert into klienci (imie, nazwisko, adres_id) values ('Tore', 'Plose', 24);
-insert into klienci (imie, nazwisko, adres_id) values ('Sibelle', 'Tottie', 26);
-insert into klienci (imie, nazwisko, adres_id) values ('Albina', 'De Giorgio', 44);
-insert into klienci (imie, nazwisko, adres_id) values ('Katey', 'Twaite', 5);
-insert into klienci (imie, nazwisko, adres_id) values ('Ozzy', 'Taillard', 59);
-insert into klienci (imie, nazwisko, adres_id) values ('Glory', 'Mattin', 24);
-insert into klienci (imie, nazwisko, adres_id) values ('Danice', 'Lowdwell', 57);
-insert into klienci (imie, nazwisko, adres_id) values ('Lazaro', 'Benit', 45);
-insert into klienci (imie, nazwisko, adres_id) values ('Oswell', 'Lennon', 3);
-insert into klienci (imie, nazwisko, adres_id) values ('Raphael', 'Pound', 50);
-insert into klienci (imie, nazwisko, adres_id) values ('Tedi', 'Swettenham', 35);
-insert into klienci (imie, nazwisko, adres_id) values ('Bealle', 'Langridge', 35);
-insert into klienci (imie, nazwisko, adres_id) values ('Mame', 'Roubay', 23);
-insert into klienci (imie, nazwisko, adres_id) values ('Carmelita', 'Tohill', 57);
-insert into klienci (imie, nazwisko, adres_id) values ('Berti', 'Canelas', 1);
-insert into klienci (imie, nazwisko, adres_id) values ('Bill', 'Edney', 36);
-insert into klienci (imie, nazwisko, adres_id) values ('Aaron', 'Deane', 7);
-insert into klienci (imie, nazwisko, adres_id) values ('Ella', 'Cornely', 45);
-insert into klienci (imie, nazwisko, adres_id) values ('Cammie', 'Dincey', 21);
-insert into klienci (imie, nazwisko, adres_id) values ('Jodi', 'Shuxsmith', 31);
-insert into klienci (imie, nazwisko, adres_id) values ('Gerard', 'Clinton', 3);
-insert into klienci (imie, nazwisko, adres_id) values ('Corrinne', 'Weavers', 59);
-insert into klienci (imie, nazwisko, adres_id) values ('Brittany', 'Wiggin', 56);
-insert into klienci (imie, nazwisko, adres_id) values ('Jess', 'Caillou', 10);
-insert into klienci (imie, nazwisko, adres_id) values ('Sonny', 'Brownstein', 45);
-insert into klienci (imie, nazwisko, adres_id) values ('Milton', 'Dundridge', 41);
-insert into klienci (imie, nazwisko, adres_id) values ('Broderic', 'Peaker', 2);
-insert into klienci (imie, nazwisko, adres_id) values ('Ingaberg', 'Davsley', 42);
-insert into klienci (imie, nazwisko, adres_id) values ('Rayna', 'Maria', 21);
-insert into klienci (imie, nazwisko, adres_id) values ('Gerda', 'Combes', 55);
-insert into klienci (imie, nazwisko, adres_id) values ('Blakelee', 'Rendall', 55);
-insert into klienci (imie, nazwisko, adres_id) values ('Avie', 'Iannitti', 7);
-insert into klienci (imie, nazwisko, adres_id) values ('Grantley', 'Rolling', 58);
-insert into klienci (imie, nazwisko, adres_id) values ('Barrie', 'Grigoire', 34);
-insert into klienci (imie, nazwisko, adres_id) values ('Whitney', 'Caseborne', 22);
-insert into klienci (imie, nazwisko, adres_id) values ('Will', 'Harberer', 12);
-insert into klienci (imie, nazwisko, adres_id) values ('Elisabet', 'Ormistone', 37);
-insert into klienci (imie, nazwisko, adres_id) values ('Winonah', 'Walisiak', 17);
-insert into klienci (imie, nazwisko, adres_id) values ('Don', 'Guitton', 10);
-insert into klienci (imie, nazwisko, adres_id) values ('Kippie', 'Pattesall', 58);
-insert into klienci (imie, nazwisko, adres_id) values ('Ignacius', 'Hull', 47);
-insert into klienci (imie, nazwisko, adres_id) values ('Birgit', 'Caunce', 32);
-insert into klienci (imie, nazwisko, adres_id) values ('Onfroi', 'Belchem', 35);
-insert into klienci (imie, nazwisko, adres_id) values ('Renaldo', 'Janway', 51);
-insert into klienci (imie, nazwisko, adres_id) values ('Andi', 'Ciobotaru', 57);
-insert into klienci (imie, nazwisko, adres_id) values ('Janeva', 'Antognetti', 30);
-insert into klienci (imie, nazwisko, adres_id) values ('Flore', 'Colvie', 53);
-insert into klienci (imie, nazwisko, adres_id) values ('Park', 'Hovenden', 54);
-insert into klienci (imie, nazwisko, adres_id) values ('Matthew', 'Godin', 9);
-insert into klienci (imie, nazwisko, adres_id) values ('Dal', 'Bradder', 21);
-insert into klienci (imie, nazwisko, adres_id) values ('Carlene', 'Gundrey', 8);
-insert into klienci (imie, nazwisko, adres_id) values ('Rosana', 'Farfoot', 16);
-insert into klienci (imie, nazwisko, adres_id) values ('Erma', 'Yegorshin', 17);
-insert into klienci (imie, nazwisko, adres_id) values ('Roberto', 'Macbeth', 50);
-insert into klienci (imie, nazwisko, adres_id) values ('Tabbi', 'Buckell', 23);
-insert into klienci (imie, nazwisko, adres_id) values ('Rowe', 'Denziloe', 53);
-
-
---samochody
-
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (30, 1, 19, 'WAUTFAFH7AN947407', 2002);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (43, 4, 28, 'JN8AF5MR9CT530662', 2000);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (8, 8, 6, '1C3CDFBA9DD231928', 1999);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (19, 8, 2, 'TRUWT28N911706978', 2008);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (36, 2, 10, 'WBAVS13587F410403', 2011);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (20, 2, 24, 'WAUVT58E44A111559', 1970);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (39, 1, 5, '1G6KA5E67BU663435', 1994);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (6, 2, 8, '5N1AA0NC7EN874355', 2013);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (29, 3, 21, '4USDU53538L184848', 2001);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (26, 2, 25, '1J4AA2D12BL688434', 2006);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (11, 6, 7, 'WAUCVAFR6BA773852', 2011);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (19, 8, 19, '5FNRL5H29EB454418', 2001);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (5, 8, 19, 'WAUHFAFL5AA782278', 2012);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (9, 9, 9, 'SCFLDCFP0EG143067', 2007);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (2, 7, 6, 'WDDHF0EB5FB070656', 1990);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (35, 3, 11, '1FTEX1CW7AK319163', 1999);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (31, 1, 6, '2G4WS55J841557344', 2008);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (42, 4, 27, '2G4GS5EV9C9866036', 2002);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (27, 3, 22, '5UXZW0C5XCL169991', 2010);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (7, 3, 26, 'WA1LYBFE4AD680834', 2011);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (29, 9, 5, '1G6DC8E53C0700338', 2008);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (9, 1, 14, 'JN8AF5MR9FT049430', 1994);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (27, 1, 11, 'WBAPH735X9E945574', 1992);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (25, 9, 1, 'JN8AF5MR0DT154094', 1999);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (16, 6, 24, '1FTMF1E88AF553723', 1990);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (38, 2, 4, 'W04GZ5GVXB1947945', 1994);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (38, 4, 20, 'WAUMFAFLXCN274947', 1994);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (45, 7, 3, 'WAUCFAFH8BN651197', 1997);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (16, 1, 21, 'WDDNG7BB2BA865273', 2005);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (31, 8, 20, '1GYEC63T22R895750', 1998);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (17, 7, 10, 'JH4CW2H6XCC704742', 2010);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (49, 9, 28, 'SCBDC4BL1AC211265', 2000);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (25, 3, 13, '1D7CE2BK4AS735522', 1984);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (7, 6, 7, '1N6AA0ECXEN266489', 1987);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (1, 5, 15, 'JH4DC53886S222241', 2000);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (42, 9, 3, '5NPEB4AC2DH171101', 1994);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (44, 4, 22, '1D7RB1GT6BS672908', 2006);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (38, 5, 5, 'WBAYF8C58DD199219', 2006);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (8, 8, 6, 'WAUSF78K99A479612', 1989);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (22, 8, 24, '4T1BD1FK3FU580305', 2007);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (43, 6, 1, '2G4GU5EV1C9517320', 2003);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (46, 8, 16, '5UXFA93556L634820', 1993);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (38, 7, 20, 'WBAUP9C52DV447184', 2007);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (10, 3, 1, '1G6DX67D280939741', 1996);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (19, 2, 21, '1FAHP2DW2BG841651', 2010);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (17, 1, 7, 'WAUJC58E72A888619', 1990);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (1, 6, 16, '2C4RDGBG3FR382828', 1969);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (31, 4, 17, 'SAJWA0F74F8539583', 1993);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (5, 1, 6, '2T3BF4DV3AW985623', 2011);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (11, 9, 22, 'WAUMF78K39N717620', 2011);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (13, 4, 9, '5UXFE43579L296056', 1994);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (31, 2, 3, 'KMHTC6AD9DU641232', 1970);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (45, 8, 18, '1FTEW1CM5BK195591', 1993);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (1, 7, 5, '1GYS4HEF3DR478479', 2007);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (17, 2, 22, 'WBAEW53463P489450', 1999);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (36, 7, 28, '1C4RDHDG2CC040987', 2011);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (17, 3, 14, 'WAUKF78P09A874869', 2011);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (4, 8, 16, 'NM0KS6AN5AT253411', 1996);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (22, 9, 12, 'WP1AE2A24BL928439', 2010);
-insert into samochody (klienci_id, kolory_id, modele_id, VIN, rok_produkcji) values (35, 6, 14, 'WAUFFAFL7CA461868', 2010);
+--addresses
+insert into client_addresses(city, postal_code, street, building, apartment)
+values
+ ('Oumiao', '58-310', 'Mccormick', 160, 29),
+ ('Mariquita', '73-028', 'Dorton', 200, 32),
+ ('Oslo', '22-319', 'Myrtle', 158, 11),
+ ('Ḩarf al Musaytirah', '42-324', 'Melody', 128, 22),
+ ('Jinchuan', '24-429', 'Eliot', 61, 37),
+ ('Chilliwack', '82-392', 'Onsgard', 57, 37),
+ ('Pochinok', '21-486', 'Shelley', 154, 37),
+ ('Khlong Yai', '23-110', 'Victoria', 79, 27),
+ ('Kasreman', '54-523', 'Waywood', 6, 34),
+ ('Maonon', '44-302', 'Springs', 34, 19),
+ ('Hrochův Týnec', '53-862', 'Dawn', 48, 1),
+ ('Popayán', '19-018', 'Westend', 171, 2),
+ ('Siparia', '24-523', 'Hoard', 2, 34),
+ ('Zala', '24-523', 'Springs', 159, 15),
+ ('Shangrao', '64-345', 'Truax', 191, 29),
+ ('Ust’-Omchug', '66-137', 'Moose', 145, 25),
+ ('Malati', '63-572', 'Dakota', 40, 38),
+ ('Chironkamba', '78-093', 'Green', 36, 26),
+ ('Makiwalo', '17-643', 'Columbus', 193, 7),
+ ('Bangunharja', '34-567', 'Nancy', 26, 33),
+ ('Moravský Písek', '69-685', 'Lighthouse Bay', 68, 4),
+ ('Chiba', '19-648', 'American', 147, 15),
+ ('Herálec', '59-201', 'Rieder', 67, 20),
+ ('Zhavoronki', '60-107', 'Scott', 10, 37),
+ ('Luotang', '63-826', 'Anthes', 111, 30),
+ ('Trzciana', '36-071', 'Gerald', 197, 35),
+ ('Vsevolozhsk', '18-649', 'Eagle Crest', 19, 13),
+ ('Gorki Vtoryye', '14-422', 'Crowley', 100, 22),
+ ('Khoyniki', '53-836', 'Spohn', 155, 13),
+ ('Gengzhuang', '15-364', 'Vernon', 160, 32),
+ ('Parista', '31-622', 'Carey', 158, 35),
+ ('Cuenca', '84-274', 'Loeprich', 48, 40),
+ ('Chotepe', '50-310', 'David', 164, 1),
+ ('Sleman', '21-379', 'Barnett', 5, 31),
+ ('Floriano', '64-000', 'Katie', 198, 35),
+ ('Bagdadi', '56-123', 'Vahlen', 123, 5),
+ ('Al Fākhūrah', '90-765', 'Parkside', 5, 33),
+ ('Landskrona', '26-191', 'Londonderry', 185, 17),
+ ('Yalagüina', '65-273', 'High Crossing', 32, 8),
+ ('Watuka', '84-238', 'Eagle Crest', 115, 9),
+ ('Ust’-Katav', '45-049', 'Thierer', 5, 35),
+ ('Urengoy', '62-860', 'Roxbury', 158, 9),
+ ('Bucaramanga', '68-011', 'Larry', 2, 7),
+ ('Tingzhou', '65-234', 'Waubesa', 180, 40),
+ ('Zhosaly', '52-239', 'Springs', 20, 8),
+ ('Longxian', '27-384', 'Gulseth', 102, 7),
+ ('Gândara de Aquém', '24-445', 'Di Loreto', 36, 39),
+ ('Rathangan', '23-423', 'Fairview', 69, 12),
+ ('Komorniki', '62-056', 'Russell', 145, 1),
+ ('Daji', '17-263', 'Crescent Oaks', 1, 40),
+ ('Viana', '65-000', 'Milwaukee', 130, 21),
+ ('Takikawa', '50-625', 'Carberry', 140, 7),
+ ('Quintães', '94-206', 'Golf Course', 183, 4),
+ ('Novoye Leushino', '15-051', 'Main', 143, 39),
+ ('Dorotea', '91-732', 'Tomscot', 22, 11),
+ ('Taurija', '62-425', 'Donald', 104, 33),
+ ('Quipot', '48-036', 'Ludington', 182, 36),
+ ('Zharkent', '42-124', 'Reindahl', 136, 14),
+ ('Oravais', '38-130', '2nd', 135, 11),
+ ('Jiangwan', '58-310', 'Dayton', 187, 10);
 
 
---typy czesci
+--clients
+insert into clients(name, surname, address_id)
+values
+ ('Raffarty', 'Mitham', 27),
+ ('Marigold', 'Rumsey', 44),
+ ('Meara', 'Terzo', 25),
+ ('Vin', 'Curmi', 49),
+ ('Tore', 'Plose', 24),
+ ('Sibelle', 'Tottie', 26),
+ ('Albina', 'De Giorgio', 44),
+ ('Katey', 'Twaite', 5),
+ ('Ozzy', 'Taillard', 59),
+ ('Glory', 'Mattin', 24),
+ ('Danice', 'Lowdwell', 57),
+ ('Lazaro', 'Benit', 45),
+ ('Oswell', 'Lennon', 3),
+ ('Raphael', 'Pound', 50),
+ ('Tedi', 'Swettenham', 35),
+ ('Bealle', 'Langridge', 35),
+ ('Mame', 'Roubay', 23),
+ ('Carmelita', 'Tohill', 57),
+ ('Berti', 'Canelas', 1),
+ ('Bill', 'Edney', 36),
+ ('Aaron', 'Deane', 7),
+ ('Ella', 'Cornely', 45),
+ ('Cammie', 'Dincey', 21),
+ ('Jodi', 'Shuxsmith', 31),
+ ('Gerard', 'Clinton', 3),
+ ('Corrinne', 'Weavers', 59),
+ ('Brittany', 'Wiggin', 56),
+ ('Jess', 'Caillou', 10),
+ ('Sonny', 'Brownstein', 45),
+ ('Milton', 'Dundridge', 41),
+ ('Broderic', 'Peaker', 2),
+ ('Ingaberg', 'Davsley', 42),
+ ('Rayna', 'Maria', 21),
+ ('Gerda', 'Combes', 55),
+ ('Blakelee', 'Rendall', 55),
+ ('Avie', 'Iannitti', 7),
+ ('Grantley', 'Rolling', 58),
+ ('Barrie', 'Grigoire', 34),
+ ('Whitney', 'Caseborne', 22),
+ ('Will', 'Harberer', 12),
+ ('Elisabet', 'Ormistone', 37),
+ ('Winonah', 'Walisiak', 17),
+ ('Don', 'Guitton', 10),
+ ('Kippie', 'Pattesall', 58),
+ ('Ignacius', 'Hull', 47),
+ ('Birgit', 'Caunce', 32),
+ ('Onfroi', 'Belchem', 35),
+ ('Renaldo', 'Janway', 51),
+ ('Andi', 'Ciobotaru', 57),
+ ('Janeva', 'Antognetti', 30),
+ ('Flore', 'Colvie', 53),
+ ('Park', 'Hovenden', 54),
+ ('Matthew', 'Godin', 9),
+ ('Dal', 'Bradder', 21),
+ ('Carlene', 'Gundrey', 8),
+ ('Rosana', 'Farfoot', 16),
+ ('Erma', 'Yegorshin', 17),
+ ('Roberto', 'Macbeth', 50),
+ ('Tabbi', 'Buckell', 23),
+ ('Rowe', 'Denziloe', 53);
 
-insert into typy (nazwa) values ('Tarcze hamulcowe');
-insert into typy (nazwa) values ('Klocki hamulcowe');
-insert into typy (nazwa) values ('Plyn do spryskiwaczy');
-insert into typy (nazwa) values ('Olej');
-insert into typy (nazwa) values ('Sprzeglo');
-insert into typy (nazwa) values ('Wahacz');
-insert into typy (nazwa) values ('Felga');
-insert into typy (nazwa) values ('Opona');
-insert into typy (nazwa) values ('Szyba przednia');
-insert into typy (nazwa) values ('Klamka');
-insert into typy (nazwa) values ('Filtr oleju');
-insert into typy (nazwa) values ('Filtr kabinowy');
-insert into typy (nazwa) values ('Pasek rozrzadu');
-insert into typy (nazwa) values ('Zderzak');
-insert into typy (nazwa) values ('Chlodnica');
-insert into typy (nazwa) values ('Uklad wspomagania');
-insert into typy (nazwa) values ('Przewody hamulcowe');
-insert into typy (nazwa) values ('Uszczelka glowicy');
-insert into typy (nazwa) values ('Wycieraczki');
-insert into typy (nazwa) values ('Silnik');
-
-
---producenci czesci
-
-insert into producenci (nazwa) values ('Eibach');
-insert into producenci (nazwa) values ('Bosch');
-insert into producenci (nazwa) values ('Dayco');
-insert into producenci (nazwa) values ('Febi');
-insert into producenci (nazwa) values ('Gates');
-insert into producenci (nazwa) values ('Meyle');
-insert into producenci (nazwa) values ('Delphi');
-insert into producenci (nazwa) values ('Magneti Marelli');
-insert into producenci (nazwa) values ('SKF');
-insert into producenci (nazwa) values ('Garrett');
-
-
---czesci
-
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('WW7YC69G2BVE792', 2, 14,1 , 500);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('LQ7QS02C9RLA673', 9, 18,2 , 600);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('CF3NY30R8QMM214', 2, 1 ,3, 1000);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('HR6BA88Z4KZI005', 6, 5 ,4 , 100);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('JY9BZ86C3CBQ988', 8, 14,5 , 233);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('XP3ZP93X8BDL972', 4, 17,6 , 900);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('CY5EY88N7VFV158', 6, 3 , 7, 1200);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('MC9OV97C0GYT502', 3, 12, 8, 146);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('LB9JJ57R1OND794', 3, 9 , 9, 323);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('NS5MT67Q4SIA814', 8, 16, 10, 456);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('UL8VS17S3GYX402', 6, 8 , 11, 567);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('OH9ZF33M2NSS163', 6, 18, 12, 670);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('WS3WZ08B6YSG205', 6, 14, 13, 700);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('FQ7HI71W0HHP883', 6, 19, 14, 800);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('NT5KQ48X7AGR116', 3, 6 , 15, 900);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('AG1DS64M3WUM685', 9, 5 , 16, 1000);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('HR4KC85A0BIN049', 9, 1 , 17, 1100);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('AZ2EM43F5WIV860', 8, 13, 18, 120);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('YJ2DB63Z2ZNN918', 9, 10, 19, 234);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('ZR1JU13K2TAM637', 5, 11, 20, 311);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('PW7EY89U1KRO214', 8, 11, 21, 460);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('EW1BD08V7CDC699', 1, 4 , 22, 545);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('ZJ6BZ49K3SVD356', 3, 8 , 23, 634);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('QR1GF32P9CIU783', 8, 4 , 24, 700);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('ME1VY53Y1DGC241', 2, 11, 25, 839);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('JP2XT83R5TDF451', 8, 15, 26, 921);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('FY9JR40E5KLV525', 6, 16, 27, 1900);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('HN2JQ36F0PKK451', 6, 4 , 28, 178);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('HF1UZ13N9VNP200', 8, 14, 29, 222);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('NK1OU95G2WHA579', 7, 2 , 30, 300);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('KK9UW54J4OBO745', 1, 4 , 1, 450);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('CC9QA99Z6WNX748', 3, 10, 2, 670);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('SR5MT73K6RPW685', 4, 14, 3, 780);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('GU1XX89P1KKH290', 5, 11, 4, 890);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('QX7ZJ60U9INH951', 3, 14, 5, 910);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('QZ9JM08E9LYZ191', 2, 2 , 6, 1300);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('TV5PG22U8UKK011', 1, 11, 7, 123);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('WH8FD57T3POT620', 9, 5 , 8, 290);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('LF7US32T0OZD973', 5, 13, 9, 312);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('CV3YI56F8LKC268', 2, 10, 10, 454);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('DT0VC97K2LSD038', 8, 16, 11, 589);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('OQ1II16Y2PTJ355', 6, 1 , 12, 640);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('VN4BS37K7RIW722', 9, 2 , 13, 720);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('OR7FA95G3UAI810', 3, 9 , 14, 850);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('XU8XC22O1BAT520', 3, 17, 15, 934);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('IA4MX20W9ERG843', 1, 6 , 16, 1222);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('GB6XY79G2KKN390', 3, 6 , 17, 190);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('WL7RK49W8EUF949', 1, 9 , 18, 210);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('NU5ZV34C6BCJ440', 2, 10, 19, 310);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('UC6TJ89B5UQY178', 6, 19, 20, 444);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('RA9QV93B6HMT250', 8, 8 , 21, 555);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('UG2ES26B4VYU772', 5, 8 , 22, 666);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('LC3LS61I0PWF153', 4, 13, 23, 777);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('CX9CP79R4SGY689', 4, 13, 24, 888);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('TF5TJ78K2BQD232', 8, 12, 25, 999);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('IX9TX37L6FVJ951', 8, 10, 26, 1000);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('GA8XX38B7AAM457', 3, 4 , 27, 124);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('LO5LF08T4XRG021', 5, 9 , 28, 270);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('YW3GV87K3WJJ867', 8, 1 , 29, 350);
-insert into czesci (numer_seryjny, producenci_id, typy_id, modele_id, koszt) values ('GM7LA22W7NPV830', 8, 13, 30, 420);
-
---stan magazynowy
-
-insert into stan_magazynowy (czesci_id, ilosc) values (1, 2);
-insert into stan_magazynowy (czesci_id, ilosc) values (2, 32);
-insert into stan_magazynowy (czesci_id, ilosc) values (3, 34);
-insert into stan_magazynowy (czesci_id, ilosc) values (4, 39);
-insert into stan_magazynowy (czesci_id, ilosc) values (5, 44);
-insert into stan_magazynowy (czesci_id, ilosc) values (6, 18);
-insert into stan_magazynowy (czesci_id, ilosc) values (7, 36);
-insert into stan_magazynowy (czesci_id, ilosc) values (8, 2);
-insert into stan_magazynowy (czesci_id, ilosc) values (9, 25);
-insert into stan_magazynowy (czesci_id, ilosc) values (10, 38);
-insert into stan_magazynowy (czesci_id, ilosc) values (11, 4);
-insert into stan_magazynowy (czesci_id, ilosc) values (12, 43);
-insert into stan_magazynowy (czesci_id, ilosc) values (13, 46);
-insert into stan_magazynowy (czesci_id, ilosc) values (14, 34);
-insert into stan_magazynowy (czesci_id, ilosc) values (15, 35);
-insert into stan_magazynowy (czesci_id, ilosc) values (16, 13);
-insert into stan_magazynowy (czesci_id, ilosc) values (17, 26);
-insert into stan_magazynowy (czesci_id, ilosc) values (18, 18);
-insert into stan_magazynowy (czesci_id, ilosc) values (19, 10);
-insert into stan_magazynowy (czesci_id, ilosc) values (20, 14);
-insert into stan_magazynowy (czesci_id, ilosc) values (21, 23);
-insert into stan_magazynowy (czesci_id, ilosc) values (22, 48);
-insert into stan_magazynowy (czesci_id, ilosc) values (23, 38);
-insert into stan_magazynowy (czesci_id, ilosc) values (24, 29);
-insert into stan_magazynowy (czesci_id, ilosc) values (25, 30);
-insert into stan_magazynowy (czesci_id, ilosc) values (26, 40);
-insert into stan_magazynowy (czesci_id, ilosc) values (27, 2);
-insert into stan_magazynowy (czesci_id, ilosc) values (28, 19);
-insert into stan_magazynowy (czesci_id, ilosc) values (29, 5);
-insert into stan_magazynowy (czesci_id, ilosc) values (30, 37);
-insert into stan_magazynowy (czesci_id, ilosc) values (31, 23);
-insert into stan_magazynowy (czesci_id, ilosc) values (32, 37);
-insert into stan_magazynowy (czesci_id, ilosc) values (33, 38);
-insert into stan_magazynowy (czesci_id, ilosc) values (34, 44);
-insert into stan_magazynowy (czesci_id, ilosc) values (35, 22);
-insert into stan_magazynowy (czesci_id, ilosc) values (36, 31);
-insert into stan_magazynowy (czesci_id, ilosc) values (37, 14);
-insert into stan_magazynowy (czesci_id, ilosc) values (38, 5);
-insert into stan_magazynowy (czesci_id, ilosc) values (39, 50);
-insert into stan_magazynowy (czesci_id, ilosc) values (40, 42);
-insert into stan_magazynowy (czesci_id, ilosc) values (41, 40);
-insert into stan_magazynowy (czesci_id, ilosc) values (42, 5);
-insert into stan_magazynowy (czesci_id, ilosc) values (43, 23);
-insert into stan_magazynowy (czesci_id, ilosc) values (44, 15);
-insert into stan_magazynowy (czesci_id, ilosc) values (45, 43);
-insert into stan_magazynowy (czesci_id, ilosc) values (46, 34);
-insert into stan_magazynowy (czesci_id, ilosc) values (47, 21);
-insert into stan_magazynowy (czesci_id, ilosc) values (48, 50);
-insert into stan_magazynowy (czesci_id, ilosc) values (49, 28);
-insert into stan_magazynowy (czesci_id, ilosc) values (50, 38);
-insert into stan_magazynowy (czesci_id, ilosc) values (51, 20);
-insert into stan_magazynowy (czesci_id, ilosc) values (52, 18);
-insert into stan_magazynowy (czesci_id, ilosc) values (53, 12);
-insert into stan_magazynowy (czesci_id, ilosc) values (54, 1);
-insert into stan_magazynowy (czesci_id, ilosc) values (55, 4);
-insert into stan_magazynowy (czesci_id, ilosc) values (56, 17);
-insert into stan_magazynowy (czesci_id, ilosc) values (57, 48);
-insert into stan_magazynowy (czesci_id, ilosc) values (58, 32);
-insert into stan_magazynowy (czesci_id, ilosc) values (59, 26);
+--cars
+insert into cars (client_id, color_id, model_id, vin, production_year)
+values
+ (30, 1, 19, 'WAUTFAFH7AN947407', 2002),
+ (43, 4, 28, 'JN8AF5MR9CT530662', 2000),
+ (8, 8, 6, '1C3CDFBA9DD231928', 1999),
+ (19, 8, 2, 'TRUWT28N911706978', 2008),
+ (36, 2, 10, 'WBAVS13587F410403', 2011),
+ (20, 2, 24, 'WAUVT58E44A111559', 1970),
+ (39, 1, 5, '1G6KA5E67BU663435', 1994),
+ (6, 2, 8, '5N1AA0NC7EN874355', 2013),
+ (29, 3, 21, '4USDU53538L184848', 2001),
+ (26, 2, 25, '1J4AA2D12BL688434', 2006),
+ (11, 6, 7, 'WAUCVAFR6BA773852', 2011),
+ (19, 8, 19, '5FNRL5H29EB454418', 2001),
+ (5, 8, 19, 'WAUHFAFL5AA782278', 2012),
+ (9, 9, 9, 'SCFLDCFP0EG143067', 2007),
+ (2, 7, 6, 'WDDHF0EB5FB070656', 1990),
+ (35, 3, 11, '1FTEX1CW7AK319163', 1999),
+ (31, 1, 6, '2G4WS55J841557344', 2008),
+ (42, 4, 27, '2G4GS5EV9C9866036', 2002),
+ (27, 3, 22, '5UXZW0C5XCL169991', 2010),
+ (7, 3, 26, 'WA1LYBFE4AD680834', 2011),
+ (29, 9, 5, '1G6DC8E53C0700338', 2008),
+ (9, 1, 14, 'JN8AF5MR9FT049430', 1994),
+ (27, 1, 11, 'WBAPH735X9E945574', 1992),
+ (25, 9, 1, 'JN8AF5MR0DT154094', 1999),
+ (16, 6, 24, '1FTMF1E88AF553723', 1990),
+ (38, 2, 4, 'W04GZ5GVXB1947945', 1994),
+ (38, 4, 20, 'WAUMFAFLXCN274947', 1994),
+ (45, 7, 3, 'WAUCFAFH8BN651197', 1997),
+ (16, 1, 21, 'WDDNG7BB2BA865273', 2005),
+ (31, 8, 20, '1GYEC63T22R895750', 1998),
+ (17, 7, 10, 'JH4CW2H6XCC704742', 2010),
+ (49, 9, 28, 'SCBDC4BL1AC211265', 2000),
+ (25, 3, 13, '1D7CE2BK4AS735522', 1984),
+ (7, 6, 7, '1N6AA0ECXEN266489', 1987),
+ (1, 5, 15, 'JH4DC53886S222241', 2000),
+ (42, 9, 3, '5NPEB4AC2DH171101', 1994),
+ (44, 4, 22, '1D7RB1GT6BS672908', 2006),
+ (38, 5, 5, 'WBAYF8C58DD199219', 2006),
+ (8, 8, 6, 'WAUSF78K99A479612', 1989),
+ (22, 8, 24, '4T1BD1FK3FU580305', 2007),
+ (43, 6, 1, '2G4GU5EV1C9517320', 2003),
+ (46, 8, 16, '5UXFA93556L634820', 1993),
+ (38, 7, 20, 'WBAUP9C52DV447184', 2007),
+ (10, 3, 1, '1G6DX67D280939741', 1996),
+ (19, 2, 21, '1FAHP2DW2BG841651', 2010),
+ (17, 1, 7, 'WAUJC58E72A888619', 1990),
+ (1, 6, 16, '2C4RDGBG3FR382828', 1969),
+ (31, 4, 17, 'SAJWA0F74F8539583', 1993),
+ (5, 1, 6, '2T3BF4DV3AW985623', 2011),
+ (11, 9, 22, 'WAUMF78K39N717620', 2011),
+ (13, 4, 9, '5UXFE43579L296056', 1994),
+ (31, 2, 3, 'KMHTC6AD9DU641232', 1970),
+ (45, 8, 18, '1FTEW1CM5BK195591', 1993),
+ (1, 7, 5, '1GYS4HEF3DR478479', 2007),
+ (17, 2, 22, 'WBAEW53463P489450', 1999),
+ (36, 7, 28, '1C4RDHDG2CC040987', 2011),
+ (17, 3, 14, 'WAUKF78P09A874869', 2011),
+ (4, 8, 16, 'NM0KS6AN5AT253411', 1996),
+ (22, 9, 12, 'WP1AE2A24BL928439', 2010),
+ (35, 6, 14, 'WAUFFAFL7CA461868', 2010);
 
 
---stanowiska
-
-insert into stanowiska (nazwa) values ('Mechanik');
-insert into stanowiska (nazwa) values ('Pracownik magazynu');
-insert into stanowiska (nazwa) values ('Administrator');
-
-
---pracownicy
-
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Sherilyn', 'Houltham', 1);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Staci', 'Swayte', 3);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Vittorio', 'Kettel', 3);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Walliw', 'Koubek', 1);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Merilyn', 'Pawlaczyk', 1);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Leroy', 'Fahy', 3);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Kinnie', 'Nussgen', 3);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Mignonne', 'Myner', 1);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Cahra', 'Dewett', 1);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Lon', 'Balbeck', 2);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Onofredo', 'Overshott', 1);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Aeriela', 'Lardiner', 2);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Trumann', 'Duffin', 1);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Elena', 'McIndoe', 2);
-insert into pracownicy (imie, nazwisko, stanowiska_id) values ('Marleah', 'Cull', 1);
-
---zamowienia na czesci
-
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (4, 13, 14, 3008, '2021-03-10');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (9, 52, 28, 5475, '2020-08-09');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (9, 54, 27, 7146, '2020-10-19');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (7, 1, 13, 9208, '2019-09-30');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (5, 56, 5, 1381, '2019-10-10');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (13, 47, 2, 872, '2019-07-24');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (1, 45, 1, 9139, '2022-12-21');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (7, 12, 40, 2675, '2022-04-23');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (10, 20, 12, 5779, '2022-03-04');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (5, 32, 34, 6199, '2020-11-28');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 7, 19, 9529, '2021-10-16');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (9, 45, 17, 2692, '2020-12-01');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (6, 13, 24, 3878, '2019-08-31');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (2, 35, 29, 4646, '2022-08-19');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 43, 13, 1686, '2019-10-17');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (12, 28, 17, 7980, '2022-03-19');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (13, 46, 5, 1502, '2023-01-04');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 32, 20, 8435, '2022-01-01');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (13, 24, 19, 5735, '2020-11-02');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (10, 8, 33, 1196, '2019-08-18');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (5, 54, 30, 7213, '2020-02-03');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (4, 43, 14, 6996, '2020-03-25');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (7, 19, 6, 9677, '2019-11-27');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (1, 29, 4, 3636, '2022-07-31');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (10, 39, 1, 9916, '2022-04-21');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (3, 39, 19, 5555, '2020-07-08');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 44, 25, 9664, '2022-03-30');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (12, 48, 25, 4868, '2020-03-27');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 47, 35, 3604, '2020-09-12');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (1, 28, 3, 676, '2021-02-08');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 50, 32, 8542, '2020-07-03');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (3, 28, 31, 5461, '2022-12-23');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 51, 34, 5233, '2021-09-09');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 50, 22, 5302, '2021-03-29');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (13, 41, 26, 8062, '2022-05-14');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (3, 41, 31, 7163, '2021-08-07');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (3, 17, 34, 1223, '2020-06-11');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (1, 1, 31, 637, '2019-12-28');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (8, 33, 10, 5904, '2021-08-02');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (1, 10, 2, 8173, '2021-12-28');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (9, 19, 33, 5509, '2020-04-04');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (7, 56, 20, 3582, '2021-03-15');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (2, 16, 28, 4890, '2021-11-30');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (1, 59, 3, 4925, '2020-04-08');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (2, 11, 19, 2616, '2021-12-12');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 13, 13, 931, '2021-05-31');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (1, 59, 19, 2661, '2022-05-02');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (4, 53, 21, 7215, '2019-08-13');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (5, 45, 27, 450, '2020-11-08');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (14, 15, 18, 300, '2021-09-29');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 53, 24, 6456, '2022-10-20');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (9, 24, 26, 5982, '2021-07-04');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (2, 43, 9, 3218, '2021-10-08');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (9, 9, 19, 8493, '2022-10-11');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (13, 44, 2, 5639, '2021-09-25');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 58, 1, 3102, '2023-01-01');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (7, 34, 3, 6800, '2019-05-28');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (2, 4, 15, 3384, '2021-05-26');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (4, 47, 22, 471, '2020-09-12');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (2, 52, 38, 5143, '2022-09-01');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (3, 46, 0, 5587, '2020-01-04');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (9, 56, 19, 8832, '2020-03-03');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (9, 14, 29, 9912, '2020-10-24');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (1, 18, 1, 3206, '2022-08-19');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (8, 16, 32, 410, '2019-06-17');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (12, 25, 33, 5192, '2021-02-21');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (2, 47, 37, 6827, '2019-06-25');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (1, 16, 24, 6505, '2020-01-25');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (12, 35, 33, 501, '2021-05-09');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (10, 6, 35, 4457, '2022-02-26');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (9, 5, 16, 432, '2021-01-08');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (1, 41, 15, 9764, '2022-04-08');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (9, 11, 11, 9775, '2021-02-22');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 34, 26, 932, '2022-04-11');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (6, 31, 17, 620, '2020-06-25');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (13, 58, 26, 2778, '2022-11-18');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (3, 16, 28, 348, '2019-06-24');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (11, 27, 10, 7918, '2022-02-25');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (14, 39, 18, 2247, '2019-06-13');
-insert into zamowienia (pracownicy_id, czesci_id, ilosc, cena, data) values (4, 22, 22, 8594, '2022-01-12');
+--part types
+insert into part_types (name)
+values
+ ('Tarcze hamulcowe'),
+ ('Klocki hamulcowe'),
+ ('Plyn do spryskiwaczy'),
+ ('Olej'),
+ ('Sprzeglo'),
+ ('Wahacz'),
+ ('Felga'),
+ ('Opona'),
+ ('Szyba przednia'),
+ ('Klamka'),
+ ('Filtr oleju'),
+ ('Filtr kabinowy'),
+ ('Pasek rozrzadu'),
+ ('Zderzak'),
+ ('Chlodnica'),
+ ('Uklad wspomagania'),
+ ('Przewody hamulcowe'),
+ ('Uszczelka glowicy'),
+ ('Wycieraczki'),
+ ('Silnik');
 
 
---naprawy
-
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WAUTFAFH7AN947407', 2, '10/4/2022', '10/19/2022', 10880);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('JN8AF5MR9CT530662', 3, '9/30/2022', '10/16/2022', 1726);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1C3CDFBA9DD231928', 1, '3/20/2022', '4/27/2022', 12008);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('TRUWT28N911706978', 1, '1/19/2022', null, 9471);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WAUJC58E72A888619', 3, '11/3/2022', '12/8/2022', 6377);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1FAHP2DW2BG841651', 2, '9/7/2022', null, 11780);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WAUJC58E72A888619', 1, '8/13/2022', '9/15/2022', 7135);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1FAHP2DW2BG841651', 2, '9/24/2022', '10/10/2022', 14647);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1FAHP2DW2BG841651', 3, '10/21/2022', '11/24/2022', 12184);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WAUJC58E72A888619', 3, '9/30/2022', '10/20/2022', 5110);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1G6DX67D280939741', 1, '7/22/2022', '8/23/2022', 9042);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1G6DX67D280939741', 3, '4/28/2022', '5/25/2022', 8724);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1G6DX67D280939741', 1, '11/15/2022', '12/3/2022', 12278);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('4T1BD1FK3FU580305', 1, '6/5/2022', null, 13138);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WBAYF8C58DD199219', 3, '4/1/2022', '4/26/2022', 13592);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WBAYF8C58DD199219', 2, '2/8/2022', '3/2/2022', 2111);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('4T1BD1FK3FU580305', 3, '1/30/2022', null, 1299);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WBAYF8C58DD199219', 3, '3/8/2022', '3/24/2022', 10171);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WBAYF8C58DD199219', 1, '2/21/2022', '3/23/2022', 8173);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WBAYF8C58DD199219', 3, '10/21/2022', null, 10000);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('2G4GU5EV1C9517320', 1, '11/26/2022', '1/3/2023', 5423);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('4T1BD1FK3FU580305', 3, '3/17/2022', null, 1767);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('2G4GU5EV1C9517320', 3, '7/8/2022', '8/6/2022', 8400);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('5NPEB4AC2DH171101', 1, '3/4/2022', '4/3/2022', 6864);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('2G4GU5EV1C9517320', 2, '8/11/2022', null, 2660);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('5NPEB4AC2DH171101', 3, '12/19/2022', '1/2/2023', 6706);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('5NPEB4AC2DH171101', 3, '12/6/2022', '12/18/2022', 7440);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('5NPEB4AC2DH171101', 1, '1/5/2023', '2/9/2023', 12250);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('JH4DC53886S222241', 3, '10/30/2022', '11/17/2022', 12904);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('JH4DC53886S222241', 2, '3/4/2022', null, 10844);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('JH4DC53886S222241', 3, '3/22/2022', '4/23/2022', 7566);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1D7RB1GT6BS672908', 3, '7/5/2022', '7/25/2022', 5061);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1N6AA0ECXEN266489', 1, '8/2/2022', '9/5/2022', 2053);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1N6AA0ECXEN266489', 3, '2/8/2022', null, 14844);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1N6AA0ECXEN266489', 1, '5/5/2022', '6/2/2022', 8508);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WDDHF0EB5FB070656', 2, '1/15/2022', '2/1/2022', 3002);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('2G4GS5EV9C9866036', 1, '1/1/2023', '1/25/2023', 4532);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('2G4GS5EV9C9866036', 2, '7/30/2022', null, 1534);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('2G4GS5EV9C9866036', 1, '10/2/2022', '11/9/2022', 12452);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('2G4GS5EV9C9866036', 3, '7/5/2022', '8/6/2022', 11589);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WDDHF0EB5FB070656', 2, '8/8/2022', null, 2790);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('SCBDC4BL1AC211265', 3, '5/24/2022', '6/20/2022', 12391);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WDDHF0EB5FB070656', 2, '11/17/2022', '12/13/2022', 3985);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('SCBDC4BL1AC211265', 1, '8/24/2022', null, 2778);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('SCBDC4BL1AC211265', 1, '8/16/2022', '9/4/2022', 3357);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WDDHF0EB5FB070656', 3, '10/3/2022', '10/19/2022', 6563);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('SCBDC4BL1AC211265', 3, '12/17/2022', null, 10278);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('SCBDC4BL1AC211265', 2, '12/24/2022', '1/11/2023', 12562);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('SCBDC4BL1AC211265', 1, '1/21/2022', null, 4223);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1D7RB1GT6BS672908', 2, '2/12/2022', '2/25/2022', 4249);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WAUSF78K99A479612', 3, '9/30/2022', '10/24/2022', 13393);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WAUSF78K99A479612', 2, '11/19/2022', '12/10/2022', 14153);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WAUSF78K99A479612', 1, '1/30/2022', '2/16/2022', 12424);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WAUSF78K99A479612', 1, '11/17/2022', '11/29/2022', 1759);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WBAUP9C52DV447184', 1, '1/10/2023', '1/25/2023', 4139);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('JH4DC53886S222241', 2, '3/30/2022', '5/5/2022', 5294);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('JH4DC53886S222241', 1, '1/4/2023', '1/29/2023', 4481);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('JH4DC53886S222241', 2, '7/20/2022', '8/22/2022', 6910);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1D7RB1GT6BS672908', 1, '9/29/2022', '10/24/2022', 13875);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('5UXFA93556L634820', 2, '1/17/2022', '2/22/2022', 7566);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WBAUP9C52DV447184', 3, '12/15/2022', '1/24/2023', 6874);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('5UXFA93556L634820', 3, '1/2/2023', '1/31/2023', 4279);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('5UXFA93556L634820', 2, '11/26/2022', '12/20/2022', 705);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WBAUP9C52DV447184', 2, '7/27/2022', '9/3/2022', 3892);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WAUJC58E72A888619', 3, '8/6/2022', '9/15/2022', 9075);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('2C4RDGBG3FR382828', 2, '8/3/2022', '8/29/2022', 8817);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('SAJWA0F74F8539583', 3, '12/20/2022', null, 703);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('2T3BF4DV3AW985623', 1, '11/15/2022', null, 8755);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WAUMF78K39N717620', 1, '4/30/2022', '5/14/2022', 12299);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('5UXFE43579L296056', 2, '6/10/2022', '7/5/2022', 9401);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('KMHTC6AD9DU641232', 1, '2/2/2022', '3/3/2022', 10805);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1FTEW1CM5BK195591', 2, '6/24/2022', '7/30/2022', 14714);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1GYS4HEF3DR478479', 2, '6/24/2022', '7/16/2022', 851);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1GYS4HEF3DR478479', 2, '3/28/2022', '5/2/2022', 8396);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WBAEW53463P489450', 1, '10/24/2022', '11/14/2022', 8015);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('1C4RDHDG2CC040987', 3, '3/22/2022', '4/18/2022', 14989);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WAUKF78P09A874869', 3, '8/11/2022', null, 10197);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('NM0KS6AN5AT253411', 3, '1/24/2022', '2/19/2022', 14073);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WP1AE2A24BL928439', 3, '11/9/2022', '12/8/2022', 9693);
-insert into naprawy (samochody_vin, pracownicy_id, data_rozpoczecia, data_zakonczenia, koszt) values ('WAUFFAFL7CA461868', 1, '10/29/2022', '11/30/2022', 11012);
+--part manufacturers
+insert into part_manufacturers (name)
+values 
+ ('Eibach'),
+ ('Bosch'),
+ ('Dayco'),
+ ('Febi'),
+ ('Gates'),
+ ('Meyle'),
+ ('Delphi'),
+ ('Magneti Marelli'),
+ ('SKF'),
+ ('Garrett');
 
 
---uzyte czesci w naprawach
-
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (1, 35, 23);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (2, 37, 1);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (3, 41, 35);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (4, 52, 33);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (5, 9, 33);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (6, 53, 39);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (7, 54, 31);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (8, 58, 16);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (9, 46, 15);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (10, 27, 25);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (11, 59, 16);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (12, 20, 22);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (13, 53, 6);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (14, 3, 29);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (15, 44, 9);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (16, 29, 29);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (17, 4, 21);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (18, 29, 33);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (19, 31, 5);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (20, 16, 21);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (21, 34, 40);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (22, 20, 37);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (23, 53, 7);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (24, 24, 8);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (25, 31, 6);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (26, 36, 28);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (27, 14, 6);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (28, 20, 2);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (29, 39, 34);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (30, 33, 20);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (31, 44, 7);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (32, 54, 31);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (33, 17, 32);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (34, 41, 30);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (35, 55, 36);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (36, 7, 13);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (37, 26, 37);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (38, 22, 29);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (39, 51, 8);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (40, 10, 7);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (41, 7, 10);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (42, 23, 30);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (43, 8, 11);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (44, 2, 23);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (45, 38, 34);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (46, 53, 23);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (47, 45, 35);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (48, 33, 10);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (49, 45, 1);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (50, 50, 13);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (51, 44, 12);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (52, 52, 24);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (53, 36, 16);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (54, 9, 36);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (55, 35, 24);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (56, 24, 34);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (57, 24, 29);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (58, 18, 18);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (59, 43, 31);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (60, 53, 40);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (61, 41, 12);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (62, 5, 14);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (63, 38, 35);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (64, 24, 37);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (65, 35, 11);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (66, 36, 30);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (67, 24, 17);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (68, 3, 12);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (69, 1, 14);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (70, 49, 18);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (71, 36, 15);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (72, 21, 4);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (73, 30, 19);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (74, 7, 28);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (75, 46, 1);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (76, 51, 28);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (77, 15, 21);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (78, 48, 30);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (79, 25, 5);
-insert into uzyte_czesci (naprawy_id, czesci_id, ilosc) values (80, 20, 3);
+--parts
+insert into parts (serial_number, manufacturer_id, type_id, model_id, price)
+values
+ ('WW7YC69G2BVE792', 2, 14, 1, 500),
+ ('LQ7QS02C9RLA673', 9, 18, 2, 600),
+ ('CF3NY30R8QMM214', 2, 1, 3, 1000),
+ ('HR6BA88Z4KZI005', 6, 5, 4, 100),
+ ('JY9BZ86C3CBQ988', 8, 14, 5, 233),
+ ('XP3ZP93X8BDL972', 4, 17, 6, 900),
+ ('CY5EY88N7VFV158', 6, 3, 7, 1200),
+ ('MC9OV97C0GYT502', 3, 12, 8, 146),
+ ('LB9JJ57R1OND794', 3, 9, 9, 323),
+ ('NS5MT67Q4SIA814', 8, 16, 10, 456),
+ ('UL8VS17S3GYX402', 6, 8, 11, 567),
+ ('OH9ZF33M2NSS163', 6, 18, 12, 670),
+ ('WS3WZ08B6YSG205', 6, 14, 13, 700),
+ ('FQ7HI71W0HHP883', 6, 19, 14, 800),
+ ('NT5KQ48X7AGR116', 3, 6, 15, 900),
+ ('AG1DS64M3WUM685', 9, 5, 16, 1000),
+ ('HR4KC85A0BIN049', 9, 1, 17, 1100),
+ ('AZ2EM43F5WIV860', 8, 13, 18, 120),
+ ('YJ2DB63Z2ZNN918', 9, 10, 19, 234),
+ ('ZR1JU13K2TAM637', 5, 11, 20, 311),
+ ('PW7EY89U1KRO214', 8, 11, 21, 460),
+ ('EW1BD08V7CDC699', 1, 4, 22, 545),
+ ('ZJ6BZ49K3SVD356', 3, 8, 23, 634),
+ ('QR1GF32P9CIU783', 8, 4, 24, 700),
+ ('ME1VY53Y1DGC241', 2, 11, 25, 839),
+ ('JP2XT83R5TDF451', 8, 15, 26, 921),
+ ('FY9JR40E5KLV525', 6, 16, 27, 1900),
+ ('HN2JQ36F0PKK451', 6, 4, 28, 178),
+ ('HF1UZ13N9VNP200', 8, 14, 29, 222),
+ ('NK1OU95G2WHA579', 7, 2, 30, 300),
+ ('KK9UW54J4OBO745', 1, 4, 1, 450),
+ ('CC9QA99Z6WNX748', 3, 10, 2, 670),
+ ('SR5MT73K6RPW685', 4, 14, 3, 780),
+ ('GU1XX89P1KKH290', 5, 11, 4, 890),
+ ('QX7ZJ60U9INH951', 3, 14, 5, 910),
+ ('QZ9JM08E9LYZ191', 2, 2, 6, 1300),
+ ('TV5PG22U8UKK011', 1, 11, 7, 123),
+ ('WH8FD57T3POT620', 9, 5, 8, 290),
+ ('LF7US32T0OZD973', 5, 13, 9, 312),
+ ('CV3YI56F8LKC268', 2, 10, 10, 454),
+ ('DT0VC97K2LSD038', 8, 16, 11, 589),
+ ('OQ1II16Y2PTJ355', 6, 1, 12, 640),
+ ('VN4BS37K7RIW722', 9, 2, 13, 720),
+ ('OR7FA95G3UAI810', 3, 9, 14, 850),
+ ('XU8XC22O1BAT520', 3, 17, 15, 934),
+ ('IA4MX20W9ERG843', 1, 6, 16, 1222),
+ ('GB6XY79G2KKN390', 3, 6, 17, 190),
+ ('WL7RK49W8EUF949', 1, 9, 18, 210),
+ ('NU5ZV34C6BCJ440', 2, 10, 19, 310),
+ ('UC6TJ89B5UQY178', 6, 19, 20, 444),
+ ('RA9QV93B6HMT250', 8, 8, 21, 555),
+ ('UG2ES26B4VYU772', 5, 8, 22, 666),
+ ('LC3LS61I0PWF153', 4, 13, 23, 777),
+ ('CX9CP79R4SGY689', 4, 13, 24, 888),
+ ('TF5TJ78K2BQD232', 8, 12, 25, 999),
+ ('IX9TX37L6FVJ951', 8, 10, 26, 1000),
+ ('GA8XX38B7AAM457', 3, 4, 27, 124),
+ ('LO5LF08T4XRG021', 5, 9, 28, 270),
+ ('YW3GV87K3WJJ867', 8, 1, 29, 350),
+ ('GM7LA22W7NPV830', 8, 13, 30, 420);
 
 
---szablony napraw
+--part stock
+insert into part_stock (part_id, stock)
+values
+ (1, 2),
+ (2, 32),
+ (3, 34),
+ (4, 39),
+ (5, 44),
+ (6, 18),
+ (7, 36),
+ (8, 2),
+ (9, 25),
+ (10, 38),
+ (11, 4),
+ (12, 43),
+ (13, 46),
+ (14, 34),
+ (15, 35),
+ (16, 13),
+ (17, 26),
+ (18, 18),
+ (19, 10),
+ (20, 14),
+ (21, 23),
+ (22, 48),
+ (23, 38),
+ (24, 29),
+ (25, 30),
+ (26, 40),
+ (27, 2),
+ (28, 19),
+ (29, 5),
+ (30, 37),
+ (31, 23),
+ (32, 37),
+ (33, 38),
+ (34, 44),
+ (35, 22),
+ (36, 31),
+ (37, 14),
+ (38, 5),
+ (39, 50),
+ (40, 42),
+ (41, 40),
+ (42, 5),
+ (43, 23),
+ (44, 15),
+ (45, 43),
+ (46, 34),
+ (47, 21),
+ (48, 50),
+ (49, 28),
+ (50, 38),
+ (51, 20),
+ (52, 18),
+ (53, 12),
+ (54, 1),
+ (55, 4),
+ (56, 17),
+ (57, 48),
+ (58, 32),
+ (59, 26);
 
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana oleju', 3987);
-insert into szablony_napraw (nazwa, koszt) values ('Dolanie plynu do spryskiwaczy', 14657);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana sprzegla', 7689);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana silnika', 12105);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana tarcz hamulcowych', 9836);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana klockow hamulcowych', 14257);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana przewodow hamulcowych', 8181);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana wszystkich elementow hamulcow', 4157);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana filtru kabinowego', 13111);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana wszystkich filtrow', 9027);
-insert into szablony_napraw (nazwa, koszt) values ('Wstawienie przedniej szyby', 11821);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana wahaczy', 13938);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana felg', 8937);
-insert into szablony_napraw (nazwa, koszt) values ('Zmiana opon (bez zakupu)', 5967);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana opon (z zakupem)', 11599);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana rozrzadu', 14615);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana zderaka przedniego', 14464);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana zderzaka tylnego', 11957);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana chlodnicy', 10050);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana uszczelki glowicy', 12022);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana wycieraczek', 14563);
-insert into szablony_napraw (nazwa, koszt) values ('Pelen serwis', 8196);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana klamki', 10616);
-insert into szablony_napraw (nazwa, koszt) values ('Wymiana ukladu wspomagania', 5890);
-insert into szablony_napraw (nazwa, koszt) values ('Spawanie', 14590);
-insert into szablony_napraw (nazwa, koszt) values ('Sprzatanie', 13208);
-insert into szablony_napraw (nazwa, koszt) values ('Kasowanie bledow w komputerze pokladowym', 3818);
-insert into szablony_napraw (nazwa, koszt) values ('Transport do klienta', 5023);
-insert into szablony_napraw (nazwa, koszt) values ('Pelna wymiana plynow', 1888);
-insert into szablony_napraw (nazwa, koszt) values ('Pelna wymiana filtrow', 9033);
+
+--employee positions
+insert into employee_positions (name)
+values
+ ('Mechanik'),
+ ('Pracownik magazynu'),
+ ('Administrator');
 
 
---wymagane czesci do szablonów
+--employees
+insert into employees (name, surname, position_id)
+values
+ ('Sherilyn', 'Houltham', 1),
+ ('Staci', 'Swayte', 3),
+ ('Vittorio', 'Kettel', 3),
+ ('Walliw', 'Koubek', 1),
+ ('Merilyn', 'Pawlaczyk', 1),
+ ('Leroy', 'Fahy', 3),
+ ('Kinnie', 'Nussgen', 3),
+ ('Mignonne', 'Myner', 1),
+ ('Cahra', 'Dewett', 1),
+ ('Lon', 'Balbeck', 2),
+ ('Onofredo', 'Overshott', 1),
+ ('Aeriela', 'Lardiner', 2),
+ ('Trumann', 'Duffin', 1),
+ ('Elena', 'McIndoe', 2),
+ ('Marleah', 'Cull', 1);
 
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (1, 25, 4);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (40, 11, 2);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (26, 1, 4);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (1, 5, 2);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (25, 23, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (39, 4, 2);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (13, 2, 4);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (8, 11, 2);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (5, 22, 2);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (41, 29, 4);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (38, 10, 4);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (40, 11, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (53, 12, 3);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (30, 11, 2);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (7, 28, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (6, 22, 4);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (22, 21, 2);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (1, 25, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (47, 3, 3);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (39, 10, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (18, 16, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (6, 12, 3);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (24, 7, 3);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (1, 3, 3);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (25, 16, 2);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (25, 21, 3);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (1, 5, 2);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (36, 12, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (9, 17, 4);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (43, 28, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (7, 1, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (9, 21, 4);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (30, 29, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (22, 18, 3);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (48, 27, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (38, 1, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (44, 26, 2);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (11, 18, 3);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (4, 15, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (27, 14, 4);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (55, 18, 2);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (8, 1, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (33, 1, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (48, 28, 4);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (12, 15, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (42, 13, 4);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (19, 6, 3);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (50, 24, 1);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (49, 17, 3);
-insert into wymagane_czesci (czesci_id, szablony_napraw_id, ilosc) values (3, 6, 4);
+
+--part orders
+insert into part_orders (employee_id, part_id, quantity, cost, date)
+values
+ (4, 13, 14, 3008, '2021-03-10'),
+ (9, 52, 28, 5475, '2020-08-09'),
+ (9, 54, 27, 7146, '2020-10-19'),
+ (7, 1, 13, 9208, '2019-09-30'),
+ (5, 56, 5, 1381, '2019-10-10'),
+ (13, 47, 2, 872, '2019-07-24'),
+ (1, 45, 1, 9139, '2022-12-21'),
+ (7, 12, 40, 2675, '2022-04-23'),
+ (10, 20, 12, 5779, '2022-03-04'),
+ (5, 32, 34, 6199, '2020-11-28'),
+ (11, 7, 19, 9529, '2021-10-16'),
+ (9, 45, 17, 2692, '2020-12-01'),
+ (6, 13, 24, 3878, '2019-08-31'),
+ (2, 35, 29, 4646, '2022-08-19'),
+ (11, 43, 13, 1686, '2019-10-17'),
+ (12, 28, 17, 7980, '2022-03-19'),
+ (13, 46, 5, 1502, '2023-01-04'),
+ (11, 32, 20, 8435, '2022-01-01'),
+ (13, 24, 19, 5735, '2020-11-02'),
+ (10, 8, 33, 1196, '2019-08-18'),
+ (5, 54, 30, 7213, '2020-02-03'),
+ (4, 43, 14, 6996, '2020-03-25'),
+ (7, 19, 6, 9677, '2019-11-27'),
+ (1, 29, 4, 3636, '2022-07-31'),
+ (10, 39, 1, 9916, '2022-04-21'),
+ (3, 39, 19, 5555, '2020-07-08'),
+ (11, 44, 25, 9664, '2022-03-30'),
+ (12, 48, 25, 4868, '2020-03-27'),
+ (11, 47, 35, 3604, '2020-09-12'),
+ (1, 28, 3, 676, '2021-02-08'),
+ (11, 50, 32, 8542, '2020-07-03'),
+ (3, 28, 31, 5461, '2022-12-23'),
+ (11, 51, 34, 5233, '2021-09-09'),
+ (11, 50, 22, 5302, '2021-03-29'),
+ (13, 41, 26, 8062, '2022-05-14'),
+ (3, 41, 31, 7163, '2021-08-07'),
+ (3, 17, 34, 1223, '2020-06-11'),
+ (1, 1, 31, 637, '2019-12-28'),
+ (8, 33, 10, 5904, '2021-08-02'),
+ (1, 10, 2, 8173, '2021-12-28'),
+ (9, 19, 33, 5509, '2020-04-04'),
+ (7, 56, 20, 3582, '2021-03-15'),
+ (2, 16, 28, 4890, '2021-11-30'),
+ (1, 59, 3, 4925, '2020-04-08'),
+ (2, 11, 19, 2616, '2021-12-12'),
+ (11, 13, 13, 931, '2021-05-31'),
+ (1, 59, 19, 2661, '2022-05-02'),
+ (4, 53, 21, 7215, '2019-08-13'),
+ (5, 45, 27, 450, '2020-11-08'),
+ (14, 15, 18, 300, '2021-09-29'),
+ (11, 53, 24, 6456, '2022-10-20'),
+ (9, 24, 26, 5982, '2021-07-04'),
+ (2, 43, 9, 3218, '2021-10-08'),
+ (9, 9, 19, 8493, '2022-10-11'),
+ (13, 44, 2, 5639, '2021-09-25'),
+ (11, 58, 1, 3102, '2023-01-01'),
+ (7, 34, 3, 6800, '2019-05-28'),
+ (2, 4, 15, 3384, '2021-05-26'),
+ (4, 47, 22, 471, '2020-09-12'),
+ (2, 52, 38, 5143, '2022-09-01'),
+ (3, 46, 0, 5587, '2020-01-04'),
+ (9, 56, 19, 8832, '2020-03-03'),
+ (9, 14, 29, 9912, '2020-10-24'),
+ (1, 18, 1, 3206, '2022-08-19'),
+ (8, 16, 32, 410, '2019-06-17'),
+ (12, 25, 33, 5192, '2021-02-21'),
+ (2, 47, 37, 6827, '2019-06-25'),
+ (1, 16, 24, 6505, '2020-01-25'),
+ (12, 35, 33, 501, '2021-05-09'),
+ (10, 6, 35, 4457, '2022-02-26'),
+ (9, 5, 16, 432, '2021-01-08'),
+ (1, 41, 15, 9764, '2022-04-08'),
+ (9, 11, 11, 9775, '2021-02-22'),
+ (11, 34, 26, 932, '2022-04-11'),
+ (6, 31, 17, 620, '2020-06-25'),
+ (13, 58, 26, 2778, '2022-11-18'),
+ (3, 16, 28, 348, '2019-06-24'),
+ (11, 27, 10, 7918, '2022-02-25'),
+ (14, 39, 18, 2247, '2019-06-13'),
+ (4, 22, 22, 8594, '2022-01-12');
+
+
+--repairs
+insert into repairs (car_vin, employee_id, start_date, end_date, cost)
+values
+ ('WAUTFAFH7AN947407', 2, '10/4/2022', '10/19/2022', 10880),
+ ('JN8AF5MR9CT530662', 3, '9/30/2022', '10/16/2022', 1726),
+ ('1C3CDFBA9DD231928', 1, '3/20/2022', '4/27/2022', 12008),
+ ('TRUWT28N911706978', 1, '1/19/2022', null, 9471),
+ ('WAUJC58E72A888619', 3, '11/3/2022', '12/8/2022', 6377),
+ ('1FAHP2DW2BG841651', 2, '9/7/2022', null, 11780),
+ ('WAUJC58E72A888619', 1, '8/13/2022', '9/15/2022', 7135),
+ ('1FAHP2DW2BG841651', 2, '9/24/2022', '10/10/2022', 14647),
+ ('1FAHP2DW2BG841651', 3, '10/21/2022', '11/24/2022', 12184),
+ ('WAUJC58E72A888619', 3, '9/30/2022', '10/20/2022', 5110),
+ ('1G6DX67D280939741', 1, '7/22/2022', '8/23/2022', 9042),
+ ('1G6DX67D280939741', 3, '4/28/2022', '5/25/2022', 8724),
+ ('1G6DX67D280939741', 1, '11/15/2022', '12/3/2022', 12278),
+ ('4T1BD1FK3FU580305', 1, '6/5/2022', null, 13138),
+ ('WBAYF8C58DD199219', 3, '4/1/2022', '4/26/2022', 13592),
+ ('WBAYF8C58DD199219', 2, '2/8/2022', '3/2/2022', 2111),
+ ('4T1BD1FK3FU580305', 3, '1/30/2022', null, 1299),
+ ('WBAYF8C58DD199219', 3, '3/8/2022', '3/24/2022', 10171),
+ ('WBAYF8C58DD199219', 1, '2/21/2022', '3/23/2022', 8173),
+ ('WBAYF8C58DD199219', 3, '10/21/2022', null, 10000),
+ ('2G4GU5EV1C9517320', 1, '11/26/2022', '1/3/2023', 5423),
+ ('4T1BD1FK3FU580305', 3, '3/17/2022', null, 1767),
+ ('2G4GU5EV1C9517320', 3, '7/8/2022', '8/6/2022', 8400),
+ ('5NPEB4AC2DH171101', 1, '3/4/2022', '4/3/2022', 6864),
+ ('2G4GU5EV1C9517320', 2, '8/11/2022', null, 2660),
+ ('5NPEB4AC2DH171101', 3, '12/19/2022', '1/2/2023', 6706),
+ ('5NPEB4AC2DH171101', 3, '12/6/2022', '12/18/2022', 7440),
+ ('5NPEB4AC2DH171101', 1, '1/5/2023', '2/9/2023', 12250),
+ ('JH4DC53886S222241', 3, '10/30/2022', '11/17/2022', 12904),
+ ('JH4DC53886S222241', 2, '3/4/2022', null, 10844),
+ ('JH4DC53886S222241', 3, '3/22/2022', '4/23/2022', 7566),
+ ('1D7RB1GT6BS672908', 3, '7/5/2022', '7/25/2022', 5061),
+ ('1N6AA0ECXEN266489', 1, '8/2/2022', '9/5/2022', 2053),
+ ('1N6AA0ECXEN266489', 3, '2/8/2022', null, 14844),
+ ('1N6AA0ECXEN266489', 1, '5/5/2022', '6/2/2022', 8508),
+ ('WDDHF0EB5FB070656', 2, '1/15/2022', '2/1/2022', 3002),
+ ('2G4GS5EV9C9866036', 1, '1/1/2023', '1/25/2023', 4532),
+ ('2G4GS5EV9C9866036', 2, '7/30/2022', null, 1534),
+ ('2G4GS5EV9C9866036', 1, '10/2/2022', '11/9/2022', 12452),
+ ('2G4GS5EV9C9866036', 3, '7/5/2022', '8/6/2022', 11589),
+ ('WDDHF0EB5FB070656', 2, '8/8/2022', null, 2790),
+ ('SCBDC4BL1AC211265', 3, '5/24/2022', '6/20/2022', 12391),
+ ('WDDHF0EB5FB070656', 2, '11/17/2022', '12/13/2022', 3985),
+ ('SCBDC4BL1AC211265', 1, '8/24/2022', null, 2778),
+ ('SCBDC4BL1AC211265', 1, '8/16/2022', '9/4/2022', 3357),
+ ('WDDHF0EB5FB070656', 3, '10/3/2022', '10/19/2022', 6563),
+ ('SCBDC4BL1AC211265', 3, '12/17/2022', null, 10278),
+ ('SCBDC4BL1AC211265', 2, '12/24/2022', '1/11/2023', 12562),
+ ('SCBDC4BL1AC211265', 1, '1/21/2022', null, 4223),
+ ('1D7RB1GT6BS672908', 2, '2/12/2022', '2/25/2022', 4249),
+ ('WAUSF78K99A479612', 3, '9/30/2022', '10/24/2022', 13393),
+ ('WAUSF78K99A479612', 2, '11/19/2022', '12/10/2022', 14153),
+ ('WAUSF78K99A479612', 1, '1/30/2022', '2/16/2022', 12424),
+ ('WAUSF78K99A479612', 1, '11/17/2022', '11/29/2022', 1759),
+ ('WBAUP9C52DV447184', 1, '1/10/2023', '1/25/2023', 4139),
+ ('JH4DC53886S222241', 2, '3/30/2022', '5/5/2022', 5294),
+ ('JH4DC53886S222241', 1, '1/4/2023', '1/29/2023', 4481),
+ ('JH4DC53886S222241', 2, '7/20/2022', '8/22/2022', 6910),
+ ('1D7RB1GT6BS672908', 1, '9/29/2022', '10/24/2022', 13875),
+ ('5UXFA93556L634820', 2, '1/17/2022', '2/22/2022', 7566),
+ ('WBAUP9C52DV447184', 3, '12/15/2022', '1/24/2023', 6874),
+ ('5UXFA93556L634820', 3, '1/2/2023', '1/31/2023', 4279),
+ ('5UXFA93556L634820', 2, '11/26/2022', '12/20/2022', 705),
+ ('WBAUP9C52DV447184', 2, '7/27/2022', '9/3/2022', 3892),
+ ('WAUJC58E72A888619', 3, '8/6/2022', '9/15/2022', 9075),
+ ('2C4RDGBG3FR382828', 2, '8/3/2022', '8/29/2022', 8817),
+ ('SAJWA0F74F8539583', 3, '12/20/2022', null, 703),
+ ('2T3BF4DV3AW985623', 1, '11/15/2022', null, 8755),
+ ('WAUMF78K39N717620', 1, '4/30/2022', '5/14/2022', 12299),
+ ('5UXFE43579L296056', 2, '6/10/2022', '7/5/2022', 9401),
+ ('KMHTC6AD9DU641232', 1, '2/2/2022', '3/3/2022', 10805),
+ ('1FTEW1CM5BK195591', 2, '6/24/2022', '7/30/2022', 14714),
+ ('1GYS4HEF3DR478479', 2, '6/24/2022', '7/16/2022', 851),
+ ('1GYS4HEF3DR478479', 2, '3/28/2022', '5/2/2022', 8396),
+ ('WBAEW53463P489450', 1, '10/24/2022', '11/14/2022', 8015),
+ ('1C4RDHDG2CC040987', 3, '3/22/2022', '4/18/2022', 14989),
+ ('WAUKF78P09A874869', 3, '8/11/2022', null, 10197),
+ ('NM0KS6AN5AT253411', 3, '1/24/2022', '2/19/2022', 14073),
+ ('WP1AE2A24BL928439', 3, '11/9/2022', '12/8/2022', 9693),
+ ('WAUFFAFL7CA461868', 1, '10/29/2022', '11/30/2022', 11012);
+
+
+--used parts
+insert into used_parts (repair_id, part_id, quantity)
+values
+ (1, 35, 23),
+ (2, 37, 1),
+ (3, 41, 35),
+ (4, 52, 33),
+ (5, 9, 33),
+ (6, 53, 39),
+ (7, 54, 31),
+ (8, 58, 16),
+ (9, 46, 15),
+ (10, 27, 25),
+ (11, 59, 16),
+ (12, 20, 22),
+ (13, 53, 6),
+ (14, 3, 29),
+ (15, 44, 9),
+ (16, 29, 29),
+ (17, 4, 21),
+ (18, 29, 33),
+ (19, 31, 5),
+ (20, 16, 21),
+ (21, 34, 40),
+ (22, 20, 37),
+ (23, 53, 7),
+ (24, 24, 8),
+ (25, 31, 6),
+ (26, 36, 28),
+ (27, 14, 6),
+ (28, 20, 2),
+ (29, 39, 34),
+ (30, 33, 20),
+ (31, 44, 7),
+ (32, 54, 31),
+ (33, 17, 32),
+ (34, 41, 30),
+ (35, 55, 36),
+ (36, 7, 13),
+ (37, 26, 37),
+ (38, 22, 29),
+ (39, 51, 8),
+ (40, 10, 7),
+ (41, 7, 10),
+ (42, 23, 30),
+ (43, 8, 11),
+ (44, 2, 23),
+ (45, 38, 34),
+ (46, 53, 23),
+ (47, 45, 35),
+ (48, 33, 10),
+ (49, 45, 1),
+ (50, 50, 13),
+ (51, 44, 12),
+ (52, 52, 24),
+ (53, 36, 16),
+ (54, 9, 36),
+ (55, 35, 24),
+ (56, 24, 34),
+ (57, 24, 29),
+ (58, 18, 18),
+ (59, 43, 31),
+ (60, 53, 40),
+ (61, 41, 12),
+ (62, 5, 14),
+ (63, 38, 35),
+ (64, 24, 37),
+ (65, 35, 11),
+ (66, 36, 30),
+ (67, 24, 17),
+ (68, 3, 12),
+ (69, 1, 14),
+ (70, 49, 18),
+ (71, 36, 15),
+ (72, 21, 4),
+ (73, 30, 19),
+ (74, 7, 28),
+ (75, 46, 1),
+ (76, 51, 28),
+ (77, 15, 21),
+ (78, 48, 30),
+ (79, 25, 5),
+ (80, 20, 3);
+
+
+--repair templates
+insert into repair_templates (name)
+values
+ ('Wymiana oleju'),
+ ('Dolanie plynu do spryskiwaczy'),
+ ('Wymiana sprzegla'),
+ ('Wymiana silnika'),
+ ('Wymiana tarcz hamulcowych'),
+ ('Wymiana klockow hamulcowych'),
+ ('Wymiana przewodow hamulcowych'),
+ ('Wymiana wszystkich elementow hamulcow'),
+ ('Wymiana filtru kabinowego'),
+ ('Wymiana wszystkich filtrow'),
+ ('Wstawienie przedniej szyby'),
+ ('Wymiana wahaczy'),
+ ('Wymiana felg'),
+ ('Zmiana opon (bez zakupu)'),
+ ('Wymiana opon (z zakupem)'),
+ ('Wymiana rozrzadu'),
+ ('Wymiana zderaka przedniego'),
+ ('Wymiana zderzaka tylnego'),
+ ('Wymiana chlodnicy'),
+ ('Wymiana uszczelki glowicy'),
+ ('Wymiana wycieraczek'),
+ ('Pelen serwis'),
+ ('Wymiana klamki'),
+ ('Wymiana ukladu wspomagania'),
+ ('Spawanie'),
+ ('Sprzatanie'),
+ ('Kasowanie bledow w komputerze pokladowym'),
+ ('Transport do klienta'),
+ ('Pelna wymiana plynow'),
+ ('Pelna wymiana filtrow');
+
+
+--required template parts
+insert into required_parts (part_id, template_id, quantity)
+values
+ (1, 25, 4),
+ (40, 11, 2),
+ (26, 1, 4),
+ (1, 5, 2),
+ (25, 23, 1),
+ (39, 4, 2),
+ (13, 2, 4),
+ (8, 11, 2),
+ (5, 22, 2),
+ (41, 29, 4),
+ (38, 10, 4),
+ (40, 11, 1),
+ (53, 12, 3),
+ (30, 11, 2),
+ (7, 28, 1),
+ (6, 22, 4),
+ (22, 21, 2),
+ (1, 25, 1),
+ (47, 3, 3),
+ (39, 10, 1),
+ (18, 16, 1),
+ (6, 12, 3),
+ (24, 7, 3),
+ (1, 3, 3),
+ (25, 16, 2),
+ (25, 21, 3),
+ (1, 5, 2),
+ (36, 12, 1),
+ (9, 17, 4),
+ (43, 28, 1),
+ (7, 1, 1),
+ (9, 21, 4),
+ (30, 29, 1),
+ (22, 18, 3),
+ (48, 27, 1),
+ (38, 1, 1),
+ (44, 26, 2),
+ (11, 18, 3),
+ (4, 15, 1),
+ (27, 14, 4),
+ (55, 18, 2),
+ (8, 1, 1),
+ (33, 1, 1),
+ (48, 28, 4),
+ (12, 15, 1),
+ (42, 13, 4),
+ (19, 6, 3),
+ (50, 24, 1),
+ (49, 17, 3),
+ (3, 6, 4);
